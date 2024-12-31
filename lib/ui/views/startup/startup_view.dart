@@ -1,7 +1,8 @@
+import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:stacked/stacked.dart';
-import 'package:ecom_app/ui/common/ui_helpers.dart';
 
 import 'startup_viewmodel.dart';
 
@@ -14,28 +15,39 @@ class StartupView extends StackedView<StartupViewModel> {
     StartupViewModel viewModel,
     Widget? child,
   ) {
-    return const Scaffold(
+    return Scaffold(
+      backgroundColor: mainBackgroundColor,
       body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text('Loading ...', style: TextStyle(fontSize: 16)),
-                horizontalSpaceSmall,
-                SizedBox(
-                  width: 16,
-                  height: 16,
-                  child: CircularProgressIndicator(
-                    color: Colors.black,
-                    strokeWidth: 6,
-                  ),
-                )
-              ],
-            ),
-          ],
-        ),
+        child: Stack(alignment: AlignmentDirectional.topCenter, children: [
+          Column(
+            children: [
+              const Expanded(
+                  flex: 2,
+                  child: SizedBox(
+                    height: 0,
+                  )),
+              SvgPicture.asset('assets/images/logo.svg'),
+              const Expanded(
+                  flex: 1,
+                  child: SizedBox(
+                    height: 0,
+                  )),
+              const SizedBox.square(
+                dimension: 30,
+                child: CircularProgressIndicator(
+                  color: Colors.white,
+                  strokeWidth: 2,
+                ),
+              ),
+              const Expanded(
+                  flex: 1,
+                  child: SizedBox(
+                    height: 0,
+                  )),
+            ],
+          ),
+          SvgPicture.asset('assets/images/splash_element.svg')
+        ]),
       ),
     );
   }
