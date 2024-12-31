@@ -1,3 +1,3 @@
-# ecom_app
+# E-commerce App
 
-A new Flutter project.
+This would be a full fledge ecommerce app, with fully functional backend
