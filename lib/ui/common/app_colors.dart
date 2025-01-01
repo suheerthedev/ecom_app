@@ -9,3 +9,5 @@ const Color kcVeryLightGrey = Color(0xFFE3E3E3);
 const Color kcBackgroundColor = kcDarkGreyColor;
 
 const Color mainBackgroundColor = Color(0xFF1A1A1A);
+const Color secondaryBackgroundColor = Color(0xFFFFFFFF);
+
