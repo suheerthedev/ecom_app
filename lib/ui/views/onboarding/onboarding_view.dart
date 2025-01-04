@@ -1,6 +1,5 @@
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
 
@@ -21,19 +20,40 @@ class OnboardingView extends StackedView<OnboardingViewModel> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("""Define
-            yourself in
-            your unique
-            way.""",
-                style: GoogleFonts.hankenGrotesk(
-                    color: Colors.black, fontSize: 21)),
             Container(
-              width: double.infinity,
-              height: 650,
-              color: Colors.red,
-              child: SvgPicture.asset('assets/images/logo.svg'),
-            ),
+              width: 100,
+              height: 100,
+              color: Colors.black,
+            )
           ],
+        ),
+      ),
+      bottomNavigationBar: SizedBox(
+        width: double.infinity,
+        height: 100,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 22),
+          child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: mainBackgroundColor,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10))),
+              onPressed: () {},
+              child: Row(
+                spacing: 7,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Get Started",
+                    style: GoogleFonts.hankenGrotesk(
+                        color: Colors.white, fontWeight: FontWeight.w600),
+                  ),
+                  const   Icon(
+                    Icons.arrow_forward,
+                    color: Colors.white,
+                  )
+                ],
+              )),
         ),
       ),
     );
