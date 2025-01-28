@@ -10,3 +10,10 @@ const Color kcBackgroundColor = kcDarkGreyColor;
 
 const Color mainBackgroundColor = Color(0xFF1A1A1A);
 const Color secondaryBackgroundColor = Color(0xFFFFFFFF);
+
+//Text Colors
+const Color mainTextColor = Color(0xFF1A1A1A);
+const Color lightTextColor = Color(0xFF999999);
+
+//Icon Colors
+const Color iconColor = Color(0xFF999999);
