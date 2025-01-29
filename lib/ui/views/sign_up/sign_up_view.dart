@@ -22,7 +22,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              spacing: 14,
+              spacing: 25,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,6 +73,10 @@ class SignUpView extends StackedView<SignUpViewModel> {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
+                              errorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: const BorderSide(color: Colors.red),
+                              ),
                             ),
                           ),
                         ],
@@ -100,6 +104,10 @@ class SignUpView extends StackedView<SignUpViewModel> {
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: const BorderSide(color: Colors.red),
                               ),
                             ),
                           ),
@@ -135,47 +143,48 @@ class SignUpView extends StackedView<SignUpViewModel> {
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),
+                              errorBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(10),
+                                borderSide: const BorderSide(color: Colors.red),
+                              ),
                             ),
                           ),
                         ],
+                      ),
+                      Text(
+                        "By signing up you agree to our Terms, Privacy Policy, and Cookie Use",
+                        style: GoogleFonts.hankenGrotesk(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w300,
+                        ),
                       ),
                     ],
                   ),
                 ),
 
                 //terms and conditon text
-                Text(
-                  "By signing up you agree to our Terms, Privacy Policy, and Cookie Use",
-                  style: GoogleFonts.hankenGrotesk(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w300,
-                  ),
-                ),
 
                 //Create account button
                 Column(
-                  spacing: 10,
+                  spacing: 18,
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 50,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.black,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
                           ),
-                          onPressed: () {},
-                          child: Text(
-                            "Create an Account",
-                            style: GoogleFonts.hankenGrotesk(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 18,
-                            ),
+                        ),
+                        onPressed: () {},
+                        child: Text(
+                          "Create an Account",
+                          style: GoogleFonts.hankenGrotesk(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
                           ),
                         ),
                       ),
@@ -207,75 +216,69 @@ class SignUpView extends StackedView<SignUpViewModel> {
                     ),
 
                     //Google Button
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 50,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          spacing: 10,
+                          children: [
+                            const FaIcon(
+                              FontAwesomeIcons.google,
+                              color: Colors.black,
+                              size: 25,
                             ),
-                          ),
-                          onPressed: () {},
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            spacing: 10,
-                            children: [
-                              const FaIcon(
-                                FontAwesomeIcons.google,
+                            Text(
+                              "Sign Up with Google",
+                              style: GoogleFonts.hankenGrotesk(
                                 color: Colors.black,
-                                size: 25,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18,
                               ),
-                              Text(
-                                "Sign Up with Google",
-                                style: GoogleFonts.hankenGrotesk(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
 
                     //Facebook Button
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: SizedBox(
-                        width: double.infinity,
-                        height: 50,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.blue,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.blue,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: Row(
+                          spacing: 10,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              FontAwesomeIcons.facebook,
+                              color: Colors.white,
+                              size: 25,
                             ),
-                          ),
-                          onPressed: () {},
-                          child: Row(
-                            spacing: 10,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              const Icon(
-                                FontAwesomeIcons.facebook,
+                            Text(
+                              "Sign Up with Facebook",
+                              style: GoogleFonts.hankenGrotesk(
                                 color: Colors.white,
-                                size: 25,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 18,
                               ),
-                              Text(
-                                "Sign Up with Facebook",
-                                style: GoogleFonts.hankenGrotesk(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 18,
-                                ),
-                              ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
