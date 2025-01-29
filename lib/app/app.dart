@@ -6,6 +6,7 @@ import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:ecom_app/ui/views/onboarding/onboarding_view.dart';
 import 'package:ecom_app/ui/views/sign_up/sign_up_view.dart';
+import 'package:ecom_app/ui/views/login/login_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -14,6 +15,7 @@ import 'package:ecom_app/ui/views/sign_up/sign_up_view.dart';
     MaterialRoute(page: StartupView),
     MaterialRoute(page: OnboardingView),
     MaterialRoute(page: SignUpView),
+    MaterialRoute(page: LoginView),
 // @stacked-route
   ],
   dependencies: [
