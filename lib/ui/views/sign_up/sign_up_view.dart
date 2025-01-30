@@ -19,7 +19,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 22),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -31,8 +31,9 @@ class SignUpView extends StackedView<SignUpViewModel> {
                     Text(
                       "Create an account",
                       style: GoogleFonts.hankenGrotesk(
+                          wordSpacing: -4,
                           color: mainTextColor,
-                          fontSize: 38,
+                          fontSize: 36,
                           fontWeight: FontWeight.w800),
                     ),
                     Text(
