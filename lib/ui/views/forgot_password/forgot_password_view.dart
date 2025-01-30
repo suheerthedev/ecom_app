@@ -81,23 +81,26 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
           ),
         ),
       ),
-      floatingActionButton: SizedBox(
-        width: 330,
-        height: 50,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black,
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 30),
+        child: SizedBox(
+          width: double.infinity,
+          height: 50,
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.black,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
             ),
-          ),
-          onPressed: () {},
-          child: Text(
-            "Send Code",
-            style: GoogleFonts.hankenGrotesk(
-              color: Colors.white,
-              fontWeight: FontWeight.w500,
-              fontSize: 18,
+            onPressed: () {},
+            child: Text(
+              "Send Code",
+              style: GoogleFonts.hankenGrotesk(
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+                fontSize: 18,
+              ),
             ),
           ),
         ),
