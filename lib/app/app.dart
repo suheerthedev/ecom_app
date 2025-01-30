@@ -10,6 +10,7 @@ import 'package:ecom_app/ui/views/login/login_view.dart';
 import 'package:ecom_app/ui/views/forgot_password/forgot_password_view.dart';
 import 'package:ecom_app/ui/views/verification/verification_view.dart';
 import 'package:ecom_app/ui/views/reset_password/reset_password_view.dart';
+import 'package:ecom_app/ui/dialogs/success/success_dialog.dart';
 // @stacked-import
 
 @StackedApp(
@@ -36,7 +37,8 @@ import 'package:ecom_app/ui/views/reset_password/reset_password_view.dart';
   ],
   dialogs: [
     StackedDialog(classType: InfoAlertDialog),
-    // @stacked-dialog
+    StackedDialog(classType: SuccessDialog),
+// @stacked-dialog
   ],
 )
 class App {}
