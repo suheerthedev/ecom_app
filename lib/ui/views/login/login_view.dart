@@ -1,3 +1,4 @@
+import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -130,12 +131,16 @@ class LoginView extends StackedView<LoginViewModel> {
                               fontWeight: FontWeight.w300,
                             ),
                           ),
-                          Text(
-                            "Reset your password",
-                            style: GoogleFonts.hankenGrotesk(
-                              decoration: TextDecoration.underline,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
+                          InkWell(
+                            onTap: viewModel
+                                .navigationService.navigateToForgotPasswordView,
+                            child: Text(
+                              "Reset your password",
+                              style: GoogleFonts.hankenGrotesk(
+                                decoration: TextDecoration.underline,
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                         ],
