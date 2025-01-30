@@ -1,3 +1,4 @@
+import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -93,7 +94,7 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: () {},
+            onPressed: viewModel.navigationService.navigateToVerificationView,
             child: Text(
               "Send Code",
               style: GoogleFonts.hankenGrotesk(
