@@ -1,3 +1,4 @@
+import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -94,7 +95,7 @@ class VerificationView extends StackedView<VerificationViewModel> {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: () {},
+            onPressed: viewModel.navigationService.navigateToResetPasswordView,
             child: Text(
               "Continue",
               style: GoogleFonts.hankenGrotesk(
