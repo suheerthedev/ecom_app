@@ -1,4 +1,3 @@
-import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -138,7 +137,7 @@ class ResetPasswordView extends StackedView<ResetPasswordViewModel> {
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            onPressed: viewModel.navigationService.navigateToResetPasswordView,
+            onPressed: viewModel.successDialog,
             child: Text(
               "Continue",
               style: GoogleFonts.hankenGrotesk(
