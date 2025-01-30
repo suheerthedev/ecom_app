@@ -8,6 +8,7 @@ import 'package:ecom_app/ui/views/onboarding/onboarding_view.dart';
 import 'package:ecom_app/ui/views/sign_up/sign_up_view.dart';
 import 'package:ecom_app/ui/views/login/login_view.dart';
 import 'package:ecom_app/ui/views/forgot_password/forgot_password_view.dart';
+import 'package:ecom_app/ui/views/verification/verification_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -18,6 +19,7 @@ import 'package:ecom_app/ui/views/forgot_password/forgot_password_view.dart';
     MaterialRoute(page: SignUpView),
     MaterialRoute(page: LoginView),
     MaterialRoute(page: ForgotPasswordView),
+    MaterialRoute(page: VerificationView),
 // @stacked-route
   ],
   dependencies: [
