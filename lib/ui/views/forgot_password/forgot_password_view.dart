@@ -41,7 +41,7 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
                       style: GoogleFonts.hankenGrotesk(
                           color: lightTextColor,
                           fontSize: 18,
-                          fontWeight: FontWeight.w300),
+                          fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),

@@ -42,7 +42,7 @@ class VerificationView extends StackedView<VerificationViewModel> {
                       style: GoogleFonts.hankenGrotesk(
                           color: lightTextColor,
                           fontSize: 18,
-                          fontWeight: FontWeight.w300),
+                          fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),

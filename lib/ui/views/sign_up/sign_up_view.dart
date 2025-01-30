@@ -39,7 +39,7 @@ class SignUpView extends StackedView<SignUpViewModel> {
                     Text(
                       "Let's create your account.",
                       style: GoogleFonts.hankenGrotesk(
-                          fontSize: 18, fontWeight: FontWeight.w300),
+                          fontSize: 18, fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),

@@ -41,7 +41,7 @@ class LoginView extends StackedView<LoginViewModel> {
                       style: GoogleFonts.hankenGrotesk(
                           color: lightTextColor,
                           fontSize: 18,
-                          fontWeight: FontWeight.w300),
+                          fontWeight: FontWeight.w400),
                     ),
                   ],
                 ),
