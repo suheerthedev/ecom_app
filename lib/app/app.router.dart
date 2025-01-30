@@ -10,13 +10,15 @@ import 'package:ecom_app/ui/views/forgot_password/forgot_password_view.dart'
 import 'package:ecom_app/ui/views/home/home_view.dart' as _i2;
 import 'package:ecom_app/ui/views/login/login_view.dart' as _i6;
 import 'package:ecom_app/ui/views/onboarding/onboarding_view.dart' as _i4;
+import 'package:ecom_app/ui/views/reset_password/reset_password_view.dart'
+    as _i9;
 import 'package:ecom_app/ui/views/sign_up/sign_up_view.dart' as _i5;
 import 'package:ecom_app/ui/views/startup/startup_view.dart' as _i3;
 import 'package:ecom_app/ui/views/verification/verification_view.dart' as _i8;
-import 'package:flutter/material.dart' as _i9;
+import 'package:flutter/material.dart' as _i10;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i10;
+import 'package:stacked_services/stacked_services.dart' as _i11;
 
 class Routes {
   static const homeView = '/home-view';
@@ -33,6 +35,8 @@ class Routes {
 
   static const verificationView = '/verification-view';
 
+  static const resetPasswordView = '/reset-password-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -41,6 +45,7 @@ class Routes {
     loginView,
     forgotPasswordView,
     verificationView,
+    resetPasswordView,
   };
 }
 
@@ -74,48 +79,58 @@ class StackedRouter extends _i1.RouterBase {
       Routes.verificationView,
       page: _i8.VerificationView,
     ),
+    _i1.RouteDef(
+      Routes.resetPasswordView,
+      page: _i9.ResetPasswordView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.OnboardingView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.OnboardingView(),
         settings: data,
       );
     },
     _i5.SignUpView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.SignUpView(),
         settings: data,
       );
     },
     _i6.LoginView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.LoginView(),
         settings: data,
       );
     },
     _i7.ForgotPasswordView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ForgotPasswordView(),
         settings: data,
       );
     },
     _i8.VerificationView: (data) {
-      return _i9.MaterialPageRoute<dynamic>(
+      return _i10.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.VerificationView(),
+        settings: data,
+      );
+    },
+    _i9.ResetPasswordView: (data) {
+      return _i10.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i9.ResetPasswordView(),
         settings: data,
       );
     },
@@ -128,7 +143,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i10.NavigationService {
+extension NavigatorStateExtension on _i11.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -227,6 +242,20 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToResetPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.resetPasswordView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -319,6 +348,20 @@ extension NavigatorStateExtension on _i10.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.verificationView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithResetPasswordView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.resetPasswordView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
