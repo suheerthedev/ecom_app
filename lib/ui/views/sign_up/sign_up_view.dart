@@ -299,12 +299,15 @@ class SignUpView extends StackedView<SignUpViewModel> {
                         style: GoogleFonts.hankenGrotesk(
                             fontSize: 16, color: lightTextColor),
                       ),
-                      Text(
-                        "Log In",
-                        style: GoogleFonts.hankenGrotesk(
-                            color: mainTextColor,
-                            fontSize: 16,
-                            decoration: TextDecoration.underline),
+                      InkWell(
+                        onTap: viewModel.navigationService.navigateToLoginView,
+                        child: Text(
+                          "Log In",
+                          style: GoogleFonts.hankenGrotesk(
+                              color: mainTextColor,
+                              fontSize: 16,
+                              decoration: TextDecoration.underline),
+                        ),
                       )
                     ],
                   ),
