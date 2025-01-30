@@ -266,7 +266,7 @@ class LoginView extends StackedView<LoginViewModel> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 80,
                 ),
                 //Footer
