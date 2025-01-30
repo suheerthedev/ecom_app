@@ -1,4 +1,6 @@
+import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked/stacked.dart';
 
 import 'forgot_password_viewmodel.dart';
@@ -13,9 +15,37 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      appBar: AppBar(),
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Forgot password",
+                      style: GoogleFonts.hankenGrotesk(
+                          wordSpacing: -4,
+                          color: mainTextColor,
+                          fontSize: 36,
+                          fontWeight: FontWeight.w800),
+                    ),
+                    Text(
+                      "Enter your email for the verification process. We will send 4 digits code to your email.",
+                      style: GoogleFonts.hankenGrotesk(
+                          color: lightTextColor,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w300),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
