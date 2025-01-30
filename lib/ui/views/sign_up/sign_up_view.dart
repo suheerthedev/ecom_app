@@ -1,3 +1,4 @@
+import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -31,8 +32,8 @@ class SignUpView extends StackedView<SignUpViewModel> {
                       "Create an account",
                       style: GoogleFonts.hankenGrotesk(
                           color: mainTextColor,
-                          fontSize: 34,
-                          fontWeight: FontWeight.bold),
+                          fontSize: 38,
+                          fontWeight: FontWeight.w800),
                     ),
                     Text(
                       "Let's create your account.",
@@ -178,7 +179,8 @@ class SignUpView extends StackedView<SignUpViewModel> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed:
+                            viewModel.navigationService.navigateToLoginView,
                         child: Text(
                           "Create an Account",
                           style: GoogleFonts.hankenGrotesk(
