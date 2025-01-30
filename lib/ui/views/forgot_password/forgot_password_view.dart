@@ -18,9 +18,11 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
       appBar: AppBar(),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
           child: SingleChildScrollView(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 25,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +44,60 @@ class ForgotPasswordView extends StackedView<ForgotPasswordViewModel> {
                     ),
                   ],
                 ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 2,
+                  children: [
+                    Text(
+                      "Email",
+                      style: GoogleFonts.hankenGrotesk(
+                          color: mainTextColor,
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    TextField(
+                      decoration: InputDecoration(
+                        hintText: "Enter your email",
+                        hintStyle: GoogleFonts.hankenGrotesk(
+                          color: lightTextColor,
+                          fontWeight: FontWeight.w300,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(10),
+                          borderSide: const BorderSide(color: Colors.red),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ],
+            ),
+          ),
+        ),
+      ),
+      floatingActionButton: SizedBox(
+        width: 330,
+        height: 50,
+        child: ElevatedButton(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.black,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          onPressed: () {},
+          child: Text(
+            "Send Code",
+            style: GoogleFonts.hankenGrotesk(
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+              fontSize: 18,
             ),
           ),
         ),
