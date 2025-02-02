@@ -165,7 +165,7 @@ class LoginView extends StackedView<LoginViewModel> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: viewModel.loginSuccess,
                         child: Text(
                           "Login",
                           style: GoogleFonts.hankenGrotesk(
