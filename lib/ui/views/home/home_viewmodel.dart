@@ -2,6 +2,7 @@ import 'package:ecom_app/app/app.bottomsheets.dart';
 import 'package:ecom_app/app/app.dialogs.dart';
 import 'package:ecom_app/app/app.locator.dart';
 import 'package:ecom_app/ui/common/app_strings.dart';
+import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -10,6 +11,15 @@ class HomeViewModel extends BaseViewModel {
   final _bottomSheetService = locator<BottomSheetService>();
 
   String get counterLabel => 'Counter is: $_counter';
+
+  List<Widget> tabs = [
+    Text("All"),
+    Text("T-Shirts"),
+    Text("Jeans"),
+    Text("Shoes"),
+    Text("Belts"),
+    Text("Spectacles"),
+  ];
 
   int _counter = 0;
 

@@ -23,7 +23,6 @@ class ResetPasswordViewModel extends BaseViewModel {
         navigationService.back();
         navigationService.back();
         navigationService.back();
-        print("tapped");
       },
     );
   }
