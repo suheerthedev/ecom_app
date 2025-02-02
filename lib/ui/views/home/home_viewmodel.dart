@@ -13,6 +13,12 @@ class HomeViewModel extends BaseViewModel {
 
   String get counterLabel => 'Counter is: $_counter';
 
+  List products = [
+    {"name": "Regular Fit Slogan", "price": "1,190"},
+    {"name": "Regular Fit Slogan", "price": "1,190"},
+    {"name": "Regular Fit Slogan", "price": "1,190"},
+  ];
+
   List<Widget> tabs = [
     Text("All"),
     Text("T-Shirts"),
