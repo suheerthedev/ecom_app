@@ -112,9 +112,35 @@ class HomeView extends StackedView<HomeViewModel> {
                     indicator: BoxDecoration(
                         color: Colors.black,
                         borderRadius: BorderRadius.circular(5)),
-                  )
+                  ),
+
+                  //Product Grid
                 ],
               )),
+        ),
+        bottomNavigationBar: NavigationBar(
+          destinations: [
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Iconsax.home),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Iconsax.search_normal_copy),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Iconsax.heart_copy),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Iconsax.shopping_bag_copy),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: const Icon(Iconsax.user_copy),
+            ),
+          ],
         ),
       ),
     );
