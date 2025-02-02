@@ -65,7 +65,13 @@ class SuccessDialog extends StackedView<SuccessDialogModel> {
             ],
             verticalSpaceMedium,
             GestureDetector(
-              onTap: () => completer(DialogResponse(confirmed: true)),
+              onTap: () {
+                if (request.data != null) {
+                  final Function onMainButtonTapped = request.data as Function;
+                  onMainButtonTapped();
+                }
+                completer(DialogResponse(confirmed: true));
+              },
               child: Container(
                 height: 50,
                 width: double.infinity,
@@ -75,7 +81,7 @@ class SuccessDialog extends StackedView<SuccessDialogModel> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Text(
-                  'Login',
+                  request.mainButtonTitle ?? 'Login',
                   style: GoogleFonts.hankenGrotesk(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

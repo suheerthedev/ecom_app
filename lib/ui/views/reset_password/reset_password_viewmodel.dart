@@ -14,10 +14,17 @@ class ResetPasswordViewModel extends BaseViewModel {
   void successDialog() {
     dialogService.registerCustomDialogBuilders(builders);
     dialogService.showCustomDialog(
-        variant: DialogType.success,
-        title: "Password Changed!",
-        description:
-            "You can now use your new password to login to your account.",
-        mainButtonTitle: "Login");
+      variant: DialogType.success,
+      title: "Password Changed!",
+      description:
+          "You can now use your new password to login to your account.",
+      mainButtonTitle: "Login",
+      data: () {
+        navigationService.back();
+        navigationService.back();
+        navigationService.back();
+        print("tapped");
+      },
+    );
   }
 }
