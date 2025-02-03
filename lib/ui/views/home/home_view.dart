@@ -134,6 +134,8 @@ class HomeView extends StackedView<HomeViewModel> {
                                 viewModel.products[index]["name"],
                                 viewModel.products[index]["price"]);
                           }),
+
+                          //Another widget
                     )
                   ],
                 ),
