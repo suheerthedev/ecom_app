@@ -19,6 +19,7 @@ const Color lightTextColor = Color(0xFF999999);
 //Icon Colors
 const Color iconColor = Color(0xFF999999);
 const Color mainIconColor = Color(0xFFFFFFFF);
+const Color darkIconColor = Color(0xFF1A1A1A);
 
 //Button Colors
 const Color mainBtnColor = Color(0xFF1A1A1A);

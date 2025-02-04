@@ -17,6 +17,10 @@ class HomeViewModel extends BaseViewModel {
     {"name": "Regular Fit Slogan", "price": "1,190"},
     {"name": "Regular Fit Slogan", "price": "1,190"},
     {"name": "Regular Fit Slogan", "price": "1,190"},
+    {"name": "Regular Fit Slogan", "price": "1,190"},
+    {"name": "Regular Fit Slogan", "price": "1,190"},
+    {"name": "Regular Fit Slogan", "price": "1,190"},
+    {"name": "Regular Fit Slogan", "price": "1,190"},
   ];
 
   List<Widget> tabs = [
