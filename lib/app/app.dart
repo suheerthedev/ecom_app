@@ -11,6 +11,7 @@ import 'package:ecom_app/ui/views/forgot_password/forgot_password_view.dart';
 import 'package:ecom_app/ui/views/verification/verification_view.dart';
 import 'package:ecom_app/ui/views/reset_password/reset_password_view.dart';
 import 'package:ecom_app/ui/dialogs/success/success_dialog.dart';
+import 'package:ecom_app/ui/views/notification/notification_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -23,6 +24,7 @@ import 'package:ecom_app/ui/dialogs/success/success_dialog.dart';
     MaterialRoute(page: ForgotPasswordView),
     MaterialRoute(page: VerificationView),
     MaterialRoute(page: ResetPasswordView),
+    MaterialRoute(page: NotificationView),
 // @stacked-route
   ],
   dependencies: [
