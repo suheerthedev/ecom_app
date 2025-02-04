@@ -23,7 +23,7 @@ class NotificationViewModel extends BaseViewModel {
       "description": "Now you can track orders in real-time.",
       "icon": Iconsax.location,
     },
-    {"isHeader": true, "date": "June 7, 2023"},
+    {"isHeader": true, "date": "Feb 7, 2025"},
     {
       "isHeader": false,
       "title": "Credit Card Connected!",

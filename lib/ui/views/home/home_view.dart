@@ -1,3 +1,4 @@
+import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/widgets/common/product_card_1/product_card_1.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -40,8 +41,10 @@ class HomeView extends StackedView<HomeViewModel> {
                             fontSize: 38,
                             fontWeight: FontWeight.w800),
                       ),
-                      const FaIcon(
-                        Iconsax.notification_copy,
+                      IconButton(
+                        onPressed: viewModel
+                            .navigationService.navigateToNotificationView,
+                        icon: const FaIcon(Iconsax.notification_copy),
                       )
                     ],
                   ),
