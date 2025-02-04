@@ -30,7 +30,57 @@ class NotificationView extends StackedView<NotificationViewModel> {
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
-        child: Column(),
+        child: ListView.builder(
+            itemCount: viewModel.notifications.length,
+            itemBuilder: (context, index) {
+              var item = viewModel.notifications[index];
+
+              if (item["isHeader"] == true) {
+                return Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Divider(),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 8.0, horizontal: 16.0),
+                      child: Text(
+                        item["date"].toString(),
+                        style: GoogleFonts.hankenGrotesk(
+                            color: mainTextColor,
+                            letterSpacing: -1,
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ],
+                );
+              } else {
+                return ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: mainBackgroundColor,
+                    radius: 18,
+                    child: Icon(
+                      item["icon"],
+                      size: 20,
+                      color: mainIconColor,
+                    ),
+                  ),
+                  title: Text(
+                    item["title"].toString(),
+                    style: GoogleFonts.hankenGrotesk(
+                        color: mainTextColor,
+                        fontSize: 16,
+                        letterSpacing: 0,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(
+                    item["description"].toString(),
+                    style: GoogleFonts.hankenGrotesk(
+                        color: lightTextColor, letterSpacing: 0),
+                  ),
+                );
+              }
+            }),
       )),
     );
   }
