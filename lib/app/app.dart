@@ -12,6 +12,7 @@ import 'package:ecom_app/ui/views/verification/verification_view.dart';
 import 'package:ecom_app/ui/views/reset_password/reset_password_view.dart';
 import 'package:ecom_app/ui/dialogs/success/success_dialog.dart';
 import 'package:ecom_app/ui/views/notification/notification_view.dart';
+import 'package:ecom_app/ui/bottom_sheets/filter/filter_sheet.dart';
 // @stacked-import
 
 @StackedApp(
@@ -35,7 +36,8 @@ import 'package:ecom_app/ui/views/notification/notification_view.dart';
   ],
   bottomsheets: [
     StackedBottomsheet(classType: NoticeSheet),
-    // @stacked-bottom-sheet
+    StackedBottomsheet(classType: FilterSheet),
+// @stacked-bottom-sheet
   ],
   dialogs: [
     StackedDialog(classType: InfoAlertDialog),
