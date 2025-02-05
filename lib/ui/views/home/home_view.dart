@@ -82,7 +82,7 @@ class HomeView extends StackedView<HomeViewModel> {
                       Padding(
                         padding: const EdgeInsets.only(left: 10.0),
                         child: FloatingActionButton(
-                          onPressed: () {},
+                          onPressed: viewModel.showFilterBottomSheet,
                           backgroundColor: mainBtnColor,
                           elevation: 0,
                           child: const Icon(
