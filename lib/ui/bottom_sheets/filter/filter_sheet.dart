@@ -127,7 +127,7 @@ class FilterSheet extends StackedView<FilterSheetModel> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                onPressed: (){},
+                onPressed: viewModel.applyFilters,
                 child: Text(
                   "Apply Filters",
                   style: GoogleFonts.hankenGrotesk(

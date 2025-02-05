@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class FilterSheetModel extends BaseViewModel {
+  final NavigationService navigationService = NavigationService();
   List filterOptions = [];
 
   List<Widget> filterTabs = const [
@@ -27,5 +29,10 @@ class FilterSheetModel extends BaseViewModel {
   void dropDownOnChanged(String? newValue) {
     selectedSize = newValue!;
     rebuildUi();
+  }
+
+  void applyFilters() {
+    //filter logic here
+    navigationService.back();
   }
 }
