@@ -36,7 +36,7 @@ class HomeViewModel extends BaseViewModel {
 
   void showFilterBottomSheet() {
     bottomSheetService.showCustomSheet(
-      variant: BottomSheetType.notice,
+      variant: BottomSheetType.filter,
       title: "Suher Khan",
       description: "Description",
     );
