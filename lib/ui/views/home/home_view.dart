@@ -131,9 +131,9 @@ class HomeView extends StackedView<HomeViewModel> {
                               crossAxisSpacing: 15,
                               mainAxisSpacing: 15,
                             ),
-                            itemCount: viewModel.products1.length,
+                            itemCount: viewModel.products.length,
                             itemBuilder: (context, index) {
-                              final product = viewModel.products1[index];
+                              final product = viewModel.products[index];
                               return ProductCard1(
                                 product: product,
                                 onToggleSaved: () =>

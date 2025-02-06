@@ -12,19 +12,10 @@ class HomeViewModel extends BaseViewModel {
   final BottomSheetService bottomSheetService = locator<BottomSheetService>();
   final ProductService productService = locator<ProductService>();
 
-  List<Product> get products1 => productService.products;
+  List<Product> get products => productService.products;
 
   int selectedIndex = 0;
 
-  List products = [
-    {"name": "Regular Fit Slogan", "price": "1,190"},
-    {"name": "Regular Fit Slogan", "price": "1,190"},
-    {"name": "Regular Fit Slogan", "price": "1,190"},
-    {"name": "Regular Fit Slogan", "price": "1,190"},
-    {"name": "Regular Fit Slogan", "price": "1,190"},
-    {"name": "Regular Fit Slogan", "price": "1,190"},
-    {"name": "Regular Fit Slogan", "price": "1,190"},
-  ];
 
   List<Widget> tabs = const [
     Text("All"),

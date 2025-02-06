@@ -44,7 +44,9 @@ class SearchView extends StackedView<SearchViewModel> {
           spacing: 12,
           children: [
             TextField(
+
               autofocus: true,
+              onChanged: viewModel.productService.searchProducts,
               onTap: viewModel.navigationService.navigateToSearchView,
               decoration: InputDecoration(
                 alignLabelWithHint: true,
