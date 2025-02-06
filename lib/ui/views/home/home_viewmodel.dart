@@ -51,4 +51,9 @@ class HomeViewModel extends BaseViewModel {
   void navigateToSearchView() {
     navigationService.navigateToSearchView();
   }
+
+  void toggleSavedStatus(String id) {
+    productService.toggleSavedStatus(id);
+    rebuildUi();
+  }
 }

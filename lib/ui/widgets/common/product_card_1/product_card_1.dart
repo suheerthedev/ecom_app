@@ -1,3 +1,4 @@
+import 'package:ecom_app/models/product_model.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,9 +8,10 @@ import 'package:stacked/stacked.dart';
 import 'product_card_1_model.dart';
 
 class ProductCard1 extends StackedView<ProductCard1Model> {
-  final String productName;
-  final String productPrice;
-  const ProductCard1(this.productName, this.productPrice, {super.key});
+  final Product product;
+  final VoidCallback onToggleSaved;
+  const ProductCard1(
+      {required this.product, required this.onToggleSaved, super.key});
 
   @override
   Widget builder(
@@ -30,7 +32,7 @@ class ProductCard1 extends StackedView<ProductCard1Model> {
                 child: Container(
                     width: double.infinity, height: 170, color: Colors.black)),
             Text(
-              productName,
+              product.title,
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: GoogleFonts.hankenGrotesk(
@@ -39,7 +41,7 @@ class ProductCard1 extends StackedView<ProductCard1Model> {
                   color: mainTextColor),
             ),
             Text(
-              "\$ $productPrice",
+              "\$ ${product.price}",
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
               style: GoogleFonts.hankenGrotesk(
@@ -61,13 +63,13 @@ class ProductCard1 extends StackedView<ProductCard1Model> {
                 height: 35,
                 color: Colors.white70,
                 child: IconButton(
-                  isSelected: viewModel.status,
+                  isSelected: product.isSaved,
                   selectedIcon: const Icon(
                     Iconsax.heart,
                     color: Colors.red,
                   ),
                   padding: EdgeInsets.zero,
-                  onPressed: viewModel.buttonSelected,
+                  onPressed: onToggleSaved,
                   icon: const Icon(
                     Iconsax.heart_copy,
                     color: mainIconColor,

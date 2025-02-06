@@ -120,19 +120,28 @@ class HomeView extends StackedView<HomeViewModel> {
 
                   //Product Grid
                   Expanded(
-                    child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithMaxCrossAxisExtent(
-                          maxCrossAxisExtent: 300,
-                          mainAxisExtent: 230,
-                          crossAxisSpacing: 15,
-                          mainAxisSpacing: 15,
-                        ),
-                        itemCount: viewModel.products1.length,
-                        itemBuilder: (context, index) {
-                          return ProductCard1(viewModel.products1[index].title,
-                              viewModel.products1[index].price.toString());
-                        }),
+                    child: TabBarView(
+                      children: List.generate(
+                        viewModel.tabs.length,
+                        (index) => GridView.builder(
+                            gridDelegate:
+                                const SliverGridDelegateWithMaxCrossAxisExtent(
+                              maxCrossAxisExtent: 300,
+                              mainAxisExtent: 230,
+                              crossAxisSpacing: 15,
+                              mainAxisSpacing: 15,
+                            ),
+                            itemCount: viewModel.products1.length,
+                            itemBuilder: (context, index) {
+                              final product = viewModel.products1[index];
+                              return ProductCard1(
+                                product: product,
+                                onToggleSaved: () =>
+                                    viewModel.toggleSavedStatus(product.id),
+                              );
+                            }),
+                      ),
+                    ),
 
                     //Another widget
                   )

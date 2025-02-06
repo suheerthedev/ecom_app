@@ -1,8 +1,7 @@
 import 'package:stacked/stacked.dart';
 
 class ProductCard1Model extends BaseViewModel {
-  bool status = false;
-  void buttonSelected() {
+  void buttonSelected(bool status) {
     status = !status;
     rebuildUi();
   }

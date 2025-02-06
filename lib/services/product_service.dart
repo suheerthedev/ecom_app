@@ -9,7 +9,7 @@ class ProductService with ListenableServiceMixin {
       imagePath: '',
       price: 83.97,
       rating: 4.9,
-      isSaved: false,
+      isSaved: true,
     ),
     Product(
       id: '2',
@@ -65,4 +65,20 @@ class ProductService with ListenableServiceMixin {
             product.title.toLowerCase().contains(query.toLowerCase()))
         .toList();
   }
+
+  void toggleSavedStatus(String id) {
+  final index = _products.indexWhere((p) => p.id == id);
+  if (index != -1) {
+    _products[index] = Product(
+      id: _products[index].id,
+      title: _products[index].title,
+      imagePath: _products[index].imagePath,
+      price: _products[index].price,
+      rating: _products[index].rating,
+      isSaved: !_products[index].isSaved, // Toggle the saved status
+    );
+    notifyListeners(); // Notify listeners about the change
+  }
+}
+
 }
