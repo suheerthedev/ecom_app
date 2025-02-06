@@ -10,6 +10,7 @@ class SearchViewModel extends BaseViewModel {
 
   List<Product> get products => productService.products;
 
+  List<Product> filteredProducts = [];
   List recentSearches = [
     "Jeans",
     "Casual Clothes",
@@ -18,4 +19,16 @@ class SearchViewModel extends BaseViewModel {
     "V-neck shirt",
     "Winter clothes"
   ];
+
+  void searchProducts(String query) {
+    if (query.isEmpty) {
+      filteredProducts = [];
+    } else {
+      filteredProducts = products
+          .where((product) =>
+              product.title.toLowerCase().contains(query.toLowerCase()))
+          .toList();
+    }
+    rebuildUi();
+  }
 }
