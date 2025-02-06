@@ -2,6 +2,7 @@ import 'package:ecom_app/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:ecom_app/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:ecom_app/ui/views/home/home_view.dart';
 import 'package:ecom_app/ui/views/startup/startup_view.dart';
+import 'package:stacked/stacked.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:ecom_app/ui/views/onboarding/onboarding_view.dart';
@@ -27,7 +28,8 @@ import 'package:ecom_app/ui/views/search/search_view.dart';
     MaterialRoute(page: VerificationView),
     MaterialRoute(page: ResetPasswordView),
     MaterialRoute(page: NotificationView),
-    MaterialRoute(page: SearchView),
+    CustomRoute(
+        page: SearchView, transitionsBuilder: TransitionsBuilders.fadeIn),
 // @stacked-route
   ],
   dependencies: [

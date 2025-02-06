@@ -1,5 +1,6 @@
 import 'package:ecom_app/app/app.bottomsheets.dart';
 import 'package:ecom_app/app/app.locator.dart';
+import 'package:ecom_app/app/app.router.dart';
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
@@ -42,5 +43,7 @@ class HomeViewModel extends BaseViewModel {
     );
   }
 
-  
+  void navigateToSearchView() {
+    navigationService.navigateToSearchView();
+  }
 }

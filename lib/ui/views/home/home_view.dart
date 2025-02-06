@@ -1,7 +1,6 @@
 import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/widgets/common/product_card_1/product_card_1.dart';
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:stacked/stacked.dart';
@@ -44,7 +43,7 @@ class HomeView extends StackedView<HomeViewModel> {
                       IconButton(
                         onPressed: viewModel
                             .navigationService.navigateToNotificationView,
-                        icon: const FaIcon(Iconsax.notification_copy),
+                        icon: const Icon(Iconsax.notification_copy),
                       )
                     ],
                   ),
@@ -55,7 +54,7 @@ class HomeView extends StackedView<HomeViewModel> {
                       Expanded(
                         child: TextField(
                           onTap:
-                              viewModel.navigationService.navigateToSearchView,
+                              viewModel.navigateToSearchView,
                           decoration: InputDecoration(
                             alignLabelWithHint: true,
                             prefixIcon: const Icon(Iconsax.search_normal_copy),
