@@ -128,10 +128,10 @@ class HomeView extends StackedView<HomeViewModel> {
                           crossAxisSpacing: 15,
                           mainAxisSpacing: 15,
                         ),
-                        itemCount: viewModel.products.length,
+                        itemCount: viewModel.products1.length,
                         itemBuilder: (context, index) {
-                          return ProductCard1(viewModel.products[index]["name"],
-                              viewModel.products[index]["price"]);
+                          return ProductCard1(viewModel.products1[index].title,
+                              viewModel.products1[index].price.toString());
                         }),
 
                     //Another widget
