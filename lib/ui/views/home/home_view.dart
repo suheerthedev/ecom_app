@@ -54,6 +54,8 @@ class HomeView extends StackedView<HomeViewModel> {
                     children: [
                       Expanded(
                         child: TextField(
+                          onTap:
+                              viewModel.navigationService.navigateToSearchView,
                           decoration: InputDecoration(
                             alignLabelWithHint: true,
                             prefixIcon: const Icon(Iconsax.search_normal_copy),
