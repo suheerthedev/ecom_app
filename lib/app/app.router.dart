@@ -157,9 +157,11 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i11.SearchView: (data) {
-      return _i12.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i11.SearchView(),
+      return _i12.PageRouteBuilder<dynamic>(
+        pageBuilder: (context, animation, secondaryAnimation) =>
+            const _i11.SearchView(),
         settings: data,
+        transitionsBuilder: data.transition ?? _i1.TransitionsBuilders.fadeIn,
       );
     },
   };
