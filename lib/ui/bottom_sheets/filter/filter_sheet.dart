@@ -98,7 +98,7 @@ class FilterSheet extends StackedView<FilterSheetModel> {
                   padding: const EdgeInsets.symmetric(horizontal: 8.0),
                   child: DropdownButton(
                     value: viewModel.selectedSize,
-                    icon: Icon(Iconsax.arrow_down_1_copy),
+                    icon: const Icon(Iconsax.arrow_down_1_copy),
                     iconSize: 24,
                     elevation: 16,
                     borderRadius: BorderRadius.circular(25),
