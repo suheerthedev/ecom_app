@@ -16,6 +16,7 @@ import 'package:ecom_app/ui/views/notification/notification_view.dart';
 import 'package:ecom_app/ui/bottom_sheets/filter/filter_sheet.dart';
 import 'package:ecom_app/ui/views/search/search_view.dart';
 import 'package:ecom_app/services/product_service.dart';
+import 'package:ecom_app/ui/views/main/main_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -31,6 +32,7 @@ import 'package:ecom_app/services/product_service.dart';
     MaterialRoute(page: NotificationView),
     CustomRoute(
         page: SearchView, transitionsBuilder: TransitionsBuilders.fadeIn),
+    MaterialRoute(page: MainView),
 // @stacked-route
   ],
   dependencies: [

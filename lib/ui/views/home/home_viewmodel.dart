@@ -16,7 +16,6 @@ class HomeViewModel extends BaseViewModel {
 
   int selectedIndex = 0;
 
-
   List<Widget> tabs = const [
     Text("All"),
     Text("T-Shirts"),

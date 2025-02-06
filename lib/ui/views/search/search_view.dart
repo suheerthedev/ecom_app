@@ -154,8 +154,6 @@ class SearchView extends StackedView<SearchViewModel> {
       SearchViewModel();
 }
 
-
-
 // Row(
 //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
 //               children: [
