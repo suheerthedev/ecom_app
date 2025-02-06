@@ -13,6 +13,7 @@ import 'package:ecom_app/ui/views/reset_password/reset_password_view.dart';
 import 'package:ecom_app/ui/dialogs/success/success_dialog.dart';
 import 'package:ecom_app/ui/views/notification/notification_view.dart';
 import 'package:ecom_app/ui/bottom_sheets/filter/filter_sheet.dart';
+import 'package:ecom_app/ui/views/search/search_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -26,6 +27,7 @@ import 'package:ecom_app/ui/bottom_sheets/filter/filter_sheet.dart';
     MaterialRoute(page: VerificationView),
     MaterialRoute(page: ResetPasswordView),
     MaterialRoute(page: NotificationView),
+    MaterialRoute(page: SearchView),
 // @stacked-route
   ],
   dependencies: [
