@@ -15,6 +15,7 @@ import 'package:ecom_app/ui/dialogs/success/success_dialog.dart';
 import 'package:ecom_app/ui/views/notification/notification_view.dart';
 import 'package:ecom_app/ui/bottom_sheets/filter/filter_sheet.dart';
 import 'package:ecom_app/ui/views/search/search_view.dart';
+import 'package:ecom_app/services/product_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -36,7 +37,8 @@ import 'package:ecom_app/ui/views/search/search_view.dart';
     LazySingleton(classType: BottomSheetService),
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
-    // @stacked-service
+    LazySingleton(classType: ProductService),
+// @stacked-service
   ],
   bottomsheets: [
     StackedBottomsheet(classType: NoticeSheet),
