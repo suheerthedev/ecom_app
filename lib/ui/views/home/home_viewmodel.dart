@@ -27,7 +27,7 @@ class HomeViewModel extends BaseViewModel {
   ];
 
   void changeNavbarIndex(int index) {
-    selectedIndex = 1;
+    selectedIndex = index;
     rebuildUi();
   }
 
