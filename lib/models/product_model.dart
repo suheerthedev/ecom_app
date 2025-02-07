@@ -4,7 +4,7 @@ class Product {
   final String imagePath;
   final double price;
   final double rating;
-  final bool isSaved;
+  bool isSaved;
 
   Product(
       {required this.id,
@@ -12,5 +12,5 @@ class Product {
       required this.imagePath,
       required this.price,
       required this.rating,
-      required this.isSaved});
+      this.isSaved = false});
 }

@@ -36,7 +36,7 @@ class ProductService with ListenableServiceMixin {
       isSaved: false,
     ),
     Product(
-      id: '4',
+      id: '5',
       title: 'Regular Fit Hoddie',
       imagePath: '',
       price: 83.97,
@@ -44,7 +44,7 @@ class ProductService with ListenableServiceMixin {
       isSaved: false,
     ),
     Product(
-      id: '4',
+      id: '6',
       title: 'Regular Fit Leather Jacket',
       imagePath: '',
       price: 83.97,

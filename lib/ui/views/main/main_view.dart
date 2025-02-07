@@ -1,4 +1,5 @@
 import 'package:ecom_app/ui/views/home/home_view.dart';
+import 'package:ecom_app/ui/views/saved/saved_view.dart';
 import 'package:ecom_app/ui/views/search/search_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
@@ -29,7 +30,7 @@ class MainView extends StackedView<MainViewModel> {
           ),
           Navigator(
             onGenerateRoute: (settings) =>
-                MaterialPageRoute(builder: (context) => const HomeView()),
+                MaterialPageRoute(builder: (context) => const SavedView()),
           ),
           Navigator(
             onGenerateRoute: (settings) =>
