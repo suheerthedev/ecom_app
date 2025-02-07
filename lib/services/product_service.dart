@@ -35,6 +35,22 @@ class ProductService with ListenableServiceMixin {
       rating: 4.9,
       isSaved: false,
     ),
+    Product(
+      id: '4',
+      title: 'Regular Fit Hoddie',
+      imagePath: '',
+      price: 83.97,
+      rating: 4.9,
+      isSaved: false,
+    ),
+    Product(
+      id: '4',
+      title: 'Regular Fit Leather Jacket',
+      imagePath: '',
+      price: 83.97,
+      rating: 4.9,
+      isSaved: false,
+    ),
   ];
 
   List<Product> get products => _products;

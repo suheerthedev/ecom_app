@@ -53,6 +53,7 @@ class HomeView extends StackedView<HomeViewModel> {
                     children: [
                       Expanded(
                         child: TextField(
+                          autofocus: false,
                           onTap: viewModel.navigateToSearchView,
                           decoration: InputDecoration(
                             alignLabelWithHint: true,
@@ -84,6 +85,7 @@ class HomeView extends StackedView<HomeViewModel> {
                         child: FloatingActionButton(
                           onPressed: viewModel.showFilterBottomSheet,
                           backgroundColor: mainBtnColor,
+                          heroTag: null,
                           elevation: 0,
                           child: const Icon(
                             Iconsax.sort_copy,
@@ -148,80 +150,6 @@ class HomeView extends StackedView<HomeViewModel> {
                 ],
               )),
         ),
-        bottomNavigationBar: NavigationBar(
-          destinations: [
-            IconButton(
-              onPressed: () {},
-              icon: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Iconsax.home),
-                  Text(
-                    "Home",
-                    style: GoogleFonts.hankenGrotesk(
-                        fontSize: 12, color: lightTextColor),
-                  )
-                ],
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Iconsax.search_normal_copy),
-                  Text(
-                    "Search",
-                    style: GoogleFonts.hankenGrotesk(
-                        fontSize: 12, color: lightTextColor),
-                  )
-                ],
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Iconsax.heart_copy),
-                  Text(
-                    "Saved",
-                    style: GoogleFonts.hankenGrotesk(
-                        fontSize: 12, color: lightTextColor),
-                  )
-                ],
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Iconsax.shopping_bag_copy),
-                  Text(
-                    "Cart",
-                    style: GoogleFonts.hankenGrotesk(
-                        fontSize: 12, color: lightTextColor),
-                  )
-                ],
-              ),
-            ),
-            IconButton(
-              onPressed: () {},
-              icon: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Icon(Iconsax.user_copy),
-                  Text(
-                    "Account",
-                    style: GoogleFonts.hankenGrotesk(
-                        fontSize: 12, color: lightTextColor),
-                  )
-                ],
-              ),
-            ),
-          ],
-        ),
       ),
     );
   }
@@ -232,3 +160,81 @@ class HomeView extends StackedView<HomeViewModel> {
   ) =>
       HomeViewModel();
 }
+
+
+
+
+        // bottomNavigationBar: NavigationBar(
+        //   destinations: [
+        //     IconButton(
+        //       onPressed: () {},
+        //       icon: Column(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           const Icon(Iconsax.home),
+        //           Text(
+        //             "Home",
+        //             style: GoogleFonts.hankenGrotesk(
+        //                 fontSize: 12, color: lightTextColor),
+        //           )
+        //         ],
+        //       ),
+        //     ),
+        //     IconButton(
+        //       onPressed: () {},
+        //       icon: Column(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           const Icon(Iconsax.search_normal_copy),
+        //           Text(
+        //             "Search",
+        //             style: GoogleFonts.hankenGrotesk(
+        //                 fontSize: 12, color: lightTextColor),
+        //           )
+        //         ],
+        //       ),
+        //     ),
+        //     IconButton(
+        //       onPressed: () {},
+        //       icon: Column(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           const Icon(Iconsax.heart_copy),
+        //           Text(
+        //             "Saved",
+        //             style: GoogleFonts.hankenGrotesk(
+        //                 fontSize: 12, color: lightTextColor),
+        //           )
+        //         ],
+        //       ),
+        //     ),
+        //     IconButton(
+        //       onPressed: () {},
+        //       icon: Column(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           const Icon(Iconsax.shopping_bag_copy),
+        //           Text(
+        //             "Cart",
+        //             style: GoogleFonts.hankenGrotesk(
+        //                 fontSize: 12, color: lightTextColor),
+        //           )
+        //         ],
+        //       ),
+        //     ),
+        //     IconButton(
+        //       onPressed: () {},
+        //       icon: Column(
+        //         mainAxisAlignment: MainAxisAlignment.center,
+        //         children: [
+        //           const Icon(Iconsax.user_copy),
+        //           Text(
+        //             "Account",
+        //             style: GoogleFonts.hankenGrotesk(
+        //                 fontSize: 12, color: lightTextColor),
+        //           )
+        //         ],
+        //       ),
+        //     ),
+        //   ],
+        // ),

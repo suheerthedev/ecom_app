@@ -1,4 +1,7 @@
+import 'package:ecom_app/ui/views/home/home_view.dart';
+import 'package:ecom_app/ui/views/search/search_view.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:stacked/stacked.dart';
 
 import 'main_viewmodel.dart';
@@ -13,9 +16,63 @@ class MainView extends StackedView<MainViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      body: IndexedStack(
+        index: viewModel.selectedIndex,
+        children: [
+          Navigator(
+            onGenerateRoute: (settings) =>
+                MaterialPageRoute(builder: (context) => const HomeView()),
+          ),
+          Navigator(
+            onGenerateRoute: (settings) =>
+                MaterialPageRoute(builder: (context) => const SearchView()),
+          ),
+          Navigator(
+            onGenerateRoute: (settings) =>
+                MaterialPageRoute(builder: (context) => const HomeView()),
+          ),
+          Navigator(
+            onGenerateRoute: (settings) =>
+                MaterialPageRoute(builder: (context) => const HomeView()),
+          ),
+          Navigator(
+            onGenerateRoute: (settings) =>
+                MaterialPageRoute(builder: (context) => const HomeView()),
+          )
+        ],
+      ),
+      bottomNavigationBar: NavigationBar(
+        
+        indicatorColor: Colors.transparent,
+        selectedIndex: viewModel.selectedIndex,
+        onDestinationSelected: viewModel.changeNavbarIndex,
+        destinations: const [
+          NavigationDestination(
+            selectedIcon: Icon(Iconsax.home),
+            icon: Icon(Iconsax.home_copy),
+            label: "Home",
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Iconsax.search_normal),
+            icon: Icon(Iconsax.search_normal_copy),
+            label: "Search",
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Iconsax.heart),
+            icon: Icon(Iconsax.heart_copy),
+            label: "Saved",
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Iconsax.shopping_bag),
+            icon: Icon(Iconsax.shopping_bag_copy),
+            label: "Cart",
+          ),
+          NavigationDestination(
+            selectedIcon: Icon(Iconsax.user),
+            icon: Icon(Iconsax.user_copy),
+            label: "Account",
+          ),
+        ],
       ),
     );
   }

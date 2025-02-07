@@ -44,7 +44,7 @@ class SearchView extends StackedView<SearchViewModel> {
           children: [
             TextField(
               cursorColor: mainBackgroundColor,
-              autofocus: true,
+              autofocus: false,
               onChanged: viewModel.searchProducts,
               onTap: viewModel.navigationService.navigateToSearchView,
               decoration: InputDecoration(
