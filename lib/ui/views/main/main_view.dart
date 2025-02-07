@@ -42,7 +42,6 @@ class MainView extends StackedView<MainViewModel> {
         ],
       ),
       bottomNavigationBar: NavigationBar(
-        
         indicatorColor: Colors.transparent,
         selectedIndex: viewModel.selectedIndex,
         onDestinationSelected: viewModel.changeNavbarIndex,

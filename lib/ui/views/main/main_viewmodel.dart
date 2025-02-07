@@ -1,7 +1,6 @@
 import 'package:stacked/stacked.dart';
 
 class MainViewModel extends BaseViewModel {
-
   int selectedIndex = 0;
 
   // Method to change bottom navigation index
@@ -9,5 +8,4 @@ class MainViewModel extends BaseViewModel {
     selectedIndex = index;
     rebuildUi();
   }
-  
 }

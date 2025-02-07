@@ -14,14 +14,15 @@ import 'package:ecom_app/ui/views/notification/notification_view.dart' as _i10;
 import 'package:ecom_app/ui/views/onboarding/onboarding_view.dart' as _i4;
 import 'package:ecom_app/ui/views/reset_password/reset_password_view.dart'
     as _i9;
+import 'package:ecom_app/ui/views/saved/saved_view.dart' as _i13;
 import 'package:ecom_app/ui/views/search/search_view.dart' as _i11;
 import 'package:ecom_app/ui/views/sign_up/sign_up_view.dart' as _i5;
 import 'package:ecom_app/ui/views/startup/startup_view.dart' as _i3;
 import 'package:ecom_app/ui/views/verification/verification_view.dart' as _i8;
-import 'package:flutter/material.dart' as _i13;
+import 'package:flutter/material.dart' as _i14;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i14;
+import 'package:stacked_services/stacked_services.dart' as _i15;
 
 class Routes {
   static const homeView = '/home-view';
@@ -46,6 +47,8 @@ class Routes {
 
   static const mainView = '/main-view';
 
+  static const savedView = '/saved-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -58,6 +61,7 @@ class Routes {
     notificationView,
     searchView,
     mainView,
+    savedView,
   };
 }
 
@@ -107,65 +111,69 @@ class StackedRouter extends _i1.RouterBase {
       Routes.mainView,
       page: _i12.MainView,
     ),
+    _i1.RouteDef(
+      Routes.savedView,
+      page: _i13.SavedView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.OnboardingView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.OnboardingView(),
         settings: data,
       );
     },
     _i5.SignUpView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.SignUpView(),
         settings: data,
       );
     },
     _i6.LoginView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.LoginView(),
         settings: data,
       );
     },
     _i7.ForgotPasswordView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ForgotPasswordView(),
         settings: data,
       );
     },
     _i8.VerificationView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.VerificationView(),
         settings: data,
       );
     },
     _i9.ResetPasswordView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.ResetPasswordView(),
         settings: data,
       );
     },
     _i10.NotificationView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.NotificationView(),
         settings: data,
       );
     },
     _i11.SearchView: (data) {
-      return _i13.PageRouteBuilder<dynamic>(
+      return _i14.PageRouteBuilder<dynamic>(
         pageBuilder: (context, animation, secondaryAnimation) =>
             const _i11.SearchView(),
         settings: data,
@@ -173,8 +181,14 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i12.MainView: (data) {
-      return _i13.MaterialPageRoute<dynamic>(
+      return _i14.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.MainView(),
+        settings: data,
+      );
+    },
+    _i13.SavedView: (data) {
+      return _i14.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i13.SavedView(),
         settings: data,
       );
     },
@@ -187,7 +201,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i14.NavigationService {
+extension NavigatorStateExtension on _i15.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -342,6 +356,20 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToSavedView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.savedView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -490,6 +518,20 @@ extension NavigatorStateExtension on _i14.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.mainView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithSavedView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.savedView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

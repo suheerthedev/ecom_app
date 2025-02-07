@@ -161,80 +161,77 @@ class HomeView extends StackedView<HomeViewModel> {
       HomeViewModel();
 }
 
-
-
-
-        // bottomNavigationBar: NavigationBar(
-        //   destinations: [
-        //     IconButton(
-        //       onPressed: () {},
-        //       icon: Column(
-        //         mainAxisAlignment: MainAxisAlignment.center,
-        //         children: [
-        //           const Icon(Iconsax.home),
-        //           Text(
-        //             "Home",
-        //             style: GoogleFonts.hankenGrotesk(
-        //                 fontSize: 12, color: lightTextColor),
-        //           )
-        //         ],
-        //       ),
-        //     ),
-        //     IconButton(
-        //       onPressed: () {},
-        //       icon: Column(
-        //         mainAxisAlignment: MainAxisAlignment.center,
-        //         children: [
-        //           const Icon(Iconsax.search_normal_copy),
-        //           Text(
-        //             "Search",
-        //             style: GoogleFonts.hankenGrotesk(
-        //                 fontSize: 12, color: lightTextColor),
-        //           )
-        //         ],
-        //       ),
-        //     ),
-        //     IconButton(
-        //       onPressed: () {},
-        //       icon: Column(
-        //         mainAxisAlignment: MainAxisAlignment.center,
-        //         children: [
-        //           const Icon(Iconsax.heart_copy),
-        //           Text(
-        //             "Saved",
-        //             style: GoogleFonts.hankenGrotesk(
-        //                 fontSize: 12, color: lightTextColor),
-        //           )
-        //         ],
-        //       ),
-        //     ),
-        //     IconButton(
-        //       onPressed: () {},
-        //       icon: Column(
-        //         mainAxisAlignment: MainAxisAlignment.center,
-        //         children: [
-        //           const Icon(Iconsax.shopping_bag_copy),
-        //           Text(
-        //             "Cart",
-        //             style: GoogleFonts.hankenGrotesk(
-        //                 fontSize: 12, color: lightTextColor),
-        //           )
-        //         ],
-        //       ),
-        //     ),
-        //     IconButton(
-        //       onPressed: () {},
-        //       icon: Column(
-        //         mainAxisAlignment: MainAxisAlignment.center,
-        //         children: [
-        //           const Icon(Iconsax.user_copy),
-        //           Text(
-        //             "Account",
-        //             style: GoogleFonts.hankenGrotesk(
-        //                 fontSize: 12, color: lightTextColor),
-        //           )
-        //         ],
-        //       ),
-        //     ),
-        //   ],
-        // ),
+// bottomNavigationBar: NavigationBar(
+//   destinations: [
+//     IconButton(
+//       onPressed: () {},
+//       icon: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           const Icon(Iconsax.home),
+//           Text(
+//             "Home",
+//             style: GoogleFonts.hankenGrotesk(
+//                 fontSize: 12, color: lightTextColor),
+//           )
+//         ],
+//       ),
+//     ),
+//     IconButton(
+//       onPressed: () {},
+//       icon: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           const Icon(Iconsax.search_normal_copy),
+//           Text(
+//             "Search",
+//             style: GoogleFonts.hankenGrotesk(
+//                 fontSize: 12, color: lightTextColor),
+//           )
+//         ],
+//       ),
+//     ),
+//     IconButton(
+//       onPressed: () {},
+//       icon: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           const Icon(Iconsax.heart_copy),
+//           Text(
+//             "Saved",
+//             style: GoogleFonts.hankenGrotesk(
+//                 fontSize: 12, color: lightTextColor),
+//           )
+//         ],
+//       ),
+//     ),
+//     IconButton(
+//       onPressed: () {},
+//       icon: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           const Icon(Iconsax.shopping_bag_copy),
+//           Text(
+//             "Cart",
+//             style: GoogleFonts.hankenGrotesk(
+//                 fontSize: 12, color: lightTextColor),
+//           )
+//         ],
+//       ),
+//     ),
+//     IconButton(
+//       onPressed: () {},
+//       icon: Column(
+//         mainAxisAlignment: MainAxisAlignment.center,
+//         children: [
+//           const Icon(Iconsax.user_copy),
+//           Text(
+//             "Account",
+//             style: GoogleFonts.hankenGrotesk(
+//                 fontSize: 12, color: lightTextColor),
+//           )
+//         ],
+//       ),
+//     ),
+//   ],
+// ),
