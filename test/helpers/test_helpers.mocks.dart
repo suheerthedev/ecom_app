@@ -8,6 +8,7 @@ import 'dart:ui' as _i6;
 
 import 'package:ecom_app/models/product_model.dart' as _i8;
 import 'package:ecom_app/services/product_service.dart' as _i7;
+import 'package:ecom_app/services/saved_product_service.dart' as _i9;
 import 'package:flutter/material.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 import 'package:mockito/src/dummies.dart' as _i3;
@@ -793,3 +794,9 @@ class MockProductService extends _i1.Mock implements _i7.ProductService {
         returnValueForMissingStub: null,
       );
 }
+
+/// A class which mocks [SavedProductService].
+///
+/// See the documentation for Mockito's code generation for more information.
+class MockSavedProductService extends _i1.Mock
+    implements _i9.SavedProductService {}

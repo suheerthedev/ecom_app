@@ -18,6 +18,7 @@ import 'package:ecom_app/ui/views/search/search_view.dart';
 import 'package:ecom_app/services/product_service.dart';
 import 'package:ecom_app/ui/views/main/main_view.dart';
 import 'package:ecom_app/ui/views/saved/saved_view.dart';
+import 'package:ecom_app/services/saved_product_service.dart';
 // @stacked-import
 
 @StackedApp(
@@ -42,6 +43,7 @@ import 'package:ecom_app/ui/views/saved/saved_view.dart';
     LazySingleton(classType: DialogService),
     LazySingleton(classType: NavigationService),
     LazySingleton(classType: ProductService),
+    LazySingleton(classType: SavedProductService),
 // @stacked-service
   ],
   bottomsheets: [

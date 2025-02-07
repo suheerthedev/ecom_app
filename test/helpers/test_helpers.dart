@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:ecom_app/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:ecom_app/services/product_service.dart';
+import 'package:ecom_app/services/saved_product_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -12,6 +13,7 @@ import 'test_helpers.mocks.dart';
   MockSpec<BottomSheetService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<DialogService>(onMissingStub: OnMissingStub.returnDefault),
   MockSpec<ProductService>(onMissingStub: OnMissingStub.returnDefault),
+  MockSpec<SavedProductService>(onMissingStub: OnMissingStub.returnDefault),
 // @stacked-mock-spec
 ])
 void registerServices() {
@@ -19,6 +21,7 @@ void registerServices() {
   getAndRegisterBottomSheetService();
   getAndRegisterDialogService();
   getAndRegisterProductService();
+  getAndRegisterSavedProductService();
 // @stacked-mock-register
 }
 
@@ -76,6 +79,13 @@ MockProductService getAndRegisterProductService() {
   _removeRegistrationIfExists<ProductService>();
   final service = MockProductService();
   locator.registerSingleton<ProductService>(service);
+  return service;
+}
+
+MockSavedProductService getAndRegisterSavedProductService() {
+  _removeRegistrationIfExists<SavedProductService>();
+  final service = MockSavedProductService();
+  locator.registerSingleton<SavedProductService>(service);
   return service;
 }
 // @stacked-mock-create
