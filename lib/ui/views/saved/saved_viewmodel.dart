@@ -7,10 +7,8 @@ import 'package:stacked_services/stacked_services.dart';
 class SavedViewModel extends BaseViewModel {
   final NavigationService navigationService = locator<NavigationService>();
   final ProductService productService = locator<ProductService>();
-
   List<Product> get savedProducts =>
       productService.products.where((product) => product.isSaved).toList();
-
   void toggleSavedStatus(String id) {
     productService.toggleSavedStatus(id);
     rebuildUi();

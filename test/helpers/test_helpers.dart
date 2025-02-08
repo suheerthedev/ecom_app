@@ -3,7 +3,6 @@ import 'package:mockito/mockito.dart';
 import 'package:ecom_app/app/app.locator.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:ecom_app/services/product_service.dart';
-import 'package:ecom_app/services/saved_product_service.dart';
 // @stacked-import
 
 import 'test_helpers.mocks.dart';
@@ -82,12 +81,7 @@ MockProductService getAndRegisterProductService() {
   return service;
 }
 
-MockSavedProductService getAndRegisterSavedProductService() {
-  _removeRegistrationIfExists<SavedProductService>();
-  final service = MockSavedProductService();
-  locator.registerSingleton<SavedProductService>(service);
-  return service;
-}
+
 // @stacked-mock-create
 
 void _removeRegistrationIfExists<T extends Object>() {

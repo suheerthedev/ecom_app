@@ -45,28 +45,36 @@ class SavedView extends StackedView<SavedViewModel> {
             ],
           ),
           Expanded(
-            child: GridView.builder(
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 300,
-                  mainAxisExtent: 230,
-                  crossAxisSpacing: 15,
-                  mainAxisSpacing: 15,
-                ),
-                itemCount: viewModel.savedProducts.length,
-                itemBuilder: (context, index) {
-                  if (viewModel.savedProducts.isEmpty) {
-                    return const Center(
-                      child: Text("List is empty"),
-                    );
-                  } else {
-                    final product = viewModel.savedProducts[index];
-                    return ProductCard1(
-                      product: product,
-                      onToggleSaved: () =>
-                          viewModel.toggleSavedStatus(product.id),
-                    );
-                  }
-                }),
+            child: viewModel.savedProducts.isEmpty
+                ? Center(
+                    child: Text(
+                      "No Saved Item Here",
+                      style: GoogleFonts.hankenGrotesk(fontSize: 24),
+                    ),
+                  )
+                : GridView.builder(
+                    gridDelegate:
+                        const SliverGridDelegateWithMaxCrossAxisExtent(
+                      maxCrossAxisExtent: 300,
+                      mainAxisExtent: 230,
+                      crossAxisSpacing: 15,
+                      mainAxisSpacing: 15,
+                    ),
+                    itemCount: viewModel.savedProducts.length,
+                    itemBuilder: (context, index) {
+                      if (viewModel.savedProducts.isEmpty) {
+                        return const Center(
+                          child: Text("List is empty"),
+                        );
+                      } else {
+                        final product = viewModel.savedProducts[index];
+                        return ProductCard1(
+                          product: product,
+                          onToggleSaved: () =>
+                              viewModel.toggleSavedStatus(product.id),
+                        );
+                      }
+                    }),
           )
         ],
       ),
