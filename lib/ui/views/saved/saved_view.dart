@@ -47,9 +47,37 @@ class SavedView extends StackedView<SavedViewModel> {
           Expanded(
             child: viewModel.savedProducts.isEmpty
                 ? Center(
-                    child: Text(
-                      "No Saved Item Here",
-                      style: GoogleFonts.hankenGrotesk(fontSize: 24),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        spacing: 15,
+                        children: [
+                          const Icon(
+                            Iconsax.heart_copy,
+                            size: 48,
+                            color: iconColor,
+                          ),
+                          Text(
+                            "No Saved Items!",
+                            textAlign: TextAlign.center,
+                            style: GoogleFonts.hankenGrotesk(
+                                fontSize: 22,
+                                color: mainTextColor,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Padding(
+                            padding:
+                                const EdgeInsets.symmetric(horizontal: 26.0),
+                            child: Text(
+                              "You don't have any saved items. Go to home and add some",
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.hankenGrotesk(
+                                  fontSize: 16, color: lightTextColor),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   )
                 : GridView.builder(

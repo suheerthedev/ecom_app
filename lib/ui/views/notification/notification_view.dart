@@ -37,7 +37,7 @@ class NotificationView extends StackedView<NotificationViewModel> {
                   padding: const EdgeInsets.all(16.0),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    spacing: 20,
+                    spacing: 15,
                     children: [
                       const Icon(
                         Iconsax.notification_copy,
