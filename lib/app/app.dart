@@ -18,6 +18,7 @@ import 'package:ecom_app/ui/views/search/search_view.dart';
 import 'package:ecom_app/services/product_service.dart';
 import 'package:ecom_app/ui/views/main/main_view.dart';
 import 'package:ecom_app/ui/views/saved/saved_view.dart';
+import 'package:ecom_app/ui/views/cart/cart_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -35,6 +36,7 @@ import 'package:ecom_app/ui/views/saved/saved_view.dart';
         page: SearchView, transitionsBuilder: TransitionsBuilders.fadeIn),
     MaterialRoute(page: MainView),
     MaterialRoute(page: SavedView),
+    MaterialRoute(page: CartView),
 // @stacked-route
   ],
   dependencies: [
