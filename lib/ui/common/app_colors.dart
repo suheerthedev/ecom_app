@@ -10,6 +10,7 @@ const Color kcBackgroundColor = kcDarkGreyColor;
 
 const Color mainBackgroundColor = Color(0xFF1A1A1A);
 const Color secondaryBackgroundColor = Color(0xFFFFFFFF);
+const Color lightBackgroundColor = Color(0xFF999999);
 
 //Text Colors
 const Color mainTextColor = Color(0xFF1A1A1A);
@@ -23,3 +24,6 @@ const Color darkIconColor = Color(0xFF1A1A1A);
 
 //Button Colors
 const Color mainBtnColor = Color(0xFF1A1A1A);
+
+//Random
+const Color errorColor = Colors.red;
