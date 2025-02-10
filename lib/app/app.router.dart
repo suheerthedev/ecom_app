@@ -216,8 +216,15 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i15.ProductDetailView: (data) {
+      final args = data.getArgs<ProductDetailViewArguments>(nullOk: false);
       return _i16.MaterialPageRoute<dynamic>(
-        builder: (context) => const _i15.ProductDetailView(),
+        builder: (context) => _i15.ProductDetailView(
+            title: args.title,
+            ratings: args.ratings,
+            description: args.description,
+            sizes: args.sizes,
+            price: args.price,
+            key: args.key),
         settings: data,
       );
     },
@@ -228,6 +235,55 @@ class StackedRouter extends _i1.RouterBase {
 
   @override
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
+}
+
+class ProductDetailViewArguments {
+  const ProductDetailViewArguments({
+    required this.title,
+    required this.ratings,
+    required this.description,
+    required this.sizes,
+    required this.price,
+    this.key,
+  });
+
+  final String title;
+
+  final double ratings;
+
+  final String description;
+
+  final List<dynamic> sizes;
+
+  final double price;
+
+  final _i16.Key? key;
+
+  @override
+  String toString() {
+    return '{"title": "$title", "ratings": "$ratings", "description": "$description", "sizes": "$sizes", "price": "$price", "key": "$key"}';
+  }
+
+  @override
+  bool operator ==(covariant ProductDetailViewArguments other) {
+    if (identical(this, other)) return true;
+    return other.title == title &&
+        other.ratings == ratings &&
+        other.description == description &&
+        other.sizes == sizes &&
+        other.price == price &&
+        other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    return title.hashCode ^
+        ratings.hashCode ^
+        description.hashCode ^
+        sizes.hashCode ^
+        price.hashCode ^
+        key.hashCode;
+  }
 }
 
 extension NavigatorStateExtension on _i17.NavigationService {
@@ -413,14 +469,27 @@ extension NavigatorStateExtension on _i17.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> navigateToProductDetailView([
+  Future<dynamic> navigateToProductDetailView({
+    required String title,
+    required double ratings,
+    required String description,
+    required List<dynamic> sizes,
+    required double price,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return navigateTo<dynamic>(Routes.productDetailView,
+        arguments: ProductDetailViewArguments(
+            title: title,
+            ratings: ratings,
+            description: description,
+            sizes: sizes,
+            price: price,
+            key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -609,14 +678,27 @@ extension NavigatorStateExtension on _i17.NavigationService {
         transition: transition);
   }
 
-  Future<dynamic> replaceWithProductDetailView([
+  Future<dynamic> replaceWithProductDetailView({
+    required String title,
+    required double ratings,
+    required String description,
+    required List<dynamic> sizes,
+    required double price,
+    _i16.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
     Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
         transition,
-  ]) async {
+  }) async {
     return replaceWith<dynamic>(Routes.productDetailView,
+        arguments: ProductDetailViewArguments(
+            title: title,
+            ratings: ratings,
+            description: description,
+            sizes: sizes,
+            price: price,
+            key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

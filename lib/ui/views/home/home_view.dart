@@ -141,6 +141,14 @@ class HomeView extends StackedView<HomeViewModel> {
                                 onToggleSaved: () =>
                                     viewModel.toggleSavedStatus(product.id),
                                 isTappable: true,
+                                onTapped: () {
+                                  viewModel.navigateToDetailedView(
+                                      product.title,
+                                      product.rating,
+                                      product.title,
+                                      [],
+                                      product.price);
+                                },
                               );
                             }),
                       ),

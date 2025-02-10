@@ -46,4 +46,14 @@ class HomeViewModel extends BaseViewModel {
     productService.toggleSavedStatus(id);
     rebuildUi();
   }
+
+  void navigateToDetailedView(String title, double ratings, String description,
+      List sizes, double price) {
+    navigationService.navigateToProductDetailView(
+        title: title,
+        ratings: ratings,
+        description: description,
+        sizes: sizes,
+        price: price);
+  }
 }
