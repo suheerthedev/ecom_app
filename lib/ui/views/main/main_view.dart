@@ -1,3 +1,4 @@
+import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:ecom_app/ui/views/cart/cart_view.dart';
 import 'package:ecom_app/ui/views/home/home_view.dart';
 import 'package:ecom_app/ui/views/saved/saved_view.dart';
@@ -44,6 +45,7 @@ class MainView extends StackedView<MainViewModel> {
         ],
       ),
       bottomNavigationBar: NavigationBar(
+        backgroundColor: secondaryBackgroundColor,
         indicatorColor: Colors.transparent,
         selectedIndex: viewModel.selectedIndex,
         onDestinationSelected: viewModel.changeNavbarIndex,
