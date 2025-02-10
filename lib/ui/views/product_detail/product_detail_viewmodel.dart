@@ -4,4 +4,6 @@ import 'package:stacked_services/stacked_services.dart';
 
 class ProductDetailViewModel extends BaseViewModel {
   final NavigationService navigationService = locator<NavigationService>();
+
+  String selectedSize = 'S';
 }

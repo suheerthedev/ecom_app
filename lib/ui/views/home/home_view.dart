@@ -145,8 +145,8 @@ class HomeView extends StackedView<HomeViewModel> {
                                   viewModel.navigateToDetailedView(
                                       product.title,
                                       product.rating,
-                                      product.title,
-                                      [],
+                                      product.description,
+                                      product.sizes,
                                       product.price);
                                 },
                               );

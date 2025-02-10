@@ -6,6 +6,9 @@ class ProductService with ListenableServiceMixin {
     Product(
       id: '1',
       title: 'Regular Fit Slogan',
+      description:
+          "The name says it all, the right size slightly snugs the body leaving enough room for comfort in the sleeves and waist.",
+      sizes: ['S', 'M', 'L'],
       imagePath: '',
       price: 83.97,
       rating: 4.9,
@@ -14,6 +17,9 @@ class ProductService with ListenableServiceMixin {
     Product(
       id: '2',
       title: 'Regular Fit Polo',
+      description:
+          "The name says it all, the right size slightly snugs the body leaving enough room for comfort in the sleeves and waist.",
+      sizes: ['S', 'M', 'L'],
       imagePath: '',
       price: 83.97,
       rating: 4.9,
@@ -22,6 +28,9 @@ class ProductService with ListenableServiceMixin {
     Product(
       id: '3',
       title: 'Regular Fit Black',
+      description:
+          "The name says it all, the right size slightly snugs the body leaving enough room for comfort in the sleeves and waist.",
+      sizes: ['S', 'M', 'L'],
       imagePath: '',
       price: 83.97,
       rating: 4.9,
@@ -30,6 +39,9 @@ class ProductService with ListenableServiceMixin {
     Product(
       id: '4',
       title: 'Regular Fit V-Neck',
+      description:
+          "The name says it all, the right size slightly snugs the body leaving enough room for comfort in the sleeves and waist.",
+      sizes: ['S', 'M', 'L'],
       imagePath: '',
       price: 83.97,
       rating: 4.9,
@@ -38,6 +50,9 @@ class ProductService with ListenableServiceMixin {
     Product(
       id: '5',
       title: 'Regular Fit Hoddie',
+      description:
+          "The name says it all, the right size slightly snugs the body leaving enough room for comfort in the sleeves and waist.",
+      sizes: ['S', 'M', 'L'],
       imagePath: '',
       price: 83.97,
       rating: 4.9,
@@ -46,6 +61,9 @@ class ProductService with ListenableServiceMixin {
     Product(
       id: '6',
       title: 'Regular Fit Leather Jacket',
+      description:
+          "The name says it all, the right size slightly snugs the body leaving enough room for comfort in the sleeves and waist.",
+      sizes: ['S', 'M', 'L'],
       imagePath: '',
       price: 83.97,
       rating: 4.9,
@@ -88,6 +106,8 @@ class ProductService with ListenableServiceMixin {
       _products[index] = Product(
         id: _products[index].id,
         title: _products[index].title,
+        description: _products[index].description,
+        sizes: _products[index].sizes,
         imagePath: _products[index].imagePath,
         price: _products[index].price,
         rating: _products[index].rating,

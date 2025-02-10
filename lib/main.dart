@@ -1,3 +1,4 @@
+import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:ecom_app/app/app.bottomsheets.dart';
 import 'package:ecom_app/app/app.dialogs.dart';
@@ -21,6 +22,13 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       initialRoute: Routes.mainView,
+      theme: ThemeData(
+        scaffoldBackgroundColor: secondaryBackgroundColor,
+        appBarTheme:
+            const AppBarTheme(backgroundColor: secondaryBackgroundColor),
+        bottomAppBarTheme:
+            const BottomAppBarTheme(color: secondaryBackgroundColor),
+      ),
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
       navigatorObservers: [

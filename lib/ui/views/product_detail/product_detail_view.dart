@@ -48,6 +48,160 @@ class ProductDetailView extends StackedView<ProductDetailViewModel> {
           )
         ],
       ),
+      body: SafeArea(
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 10,
+          children: [
+            Container(
+              width: double.maxFinite,
+              height: MediaQuery.of(context).size.height * 0.43,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  color: mainBackgroundColor),
+            ),
+            Text(
+              title,
+              style: GoogleFonts.hankenGrotesk(
+                  fontSize: 28,
+                  letterSpacing: -1,
+                  fontWeight: FontWeight.bold,
+                  color: mainTextColor),
+            ),
+            Row(
+              spacing: 5,
+              children: [
+                Icon(
+                  Icons.star,
+                  color: Colors.amber[600],
+                ),
+                Text(
+                  "${ratings.toString()}/5.0",
+                  style: GoogleFonts.hankenGrotesk(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      decoration: TextDecoration.underline,
+                      color: mainTextColor),
+                ),
+                Text(
+                  "(45 reviews)",
+                  style: GoogleFonts.hankenGrotesk(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: lightTextColor),
+                ),
+              ],
+            ),
+            Text(
+              description,
+              style: GoogleFonts.hankenGrotesk(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  color: lightTextColor),
+            ),
+            Text(
+              "Choose size",
+              style: GoogleFonts.hankenGrotesk(
+                  fontSize: 24,
+                  letterSpacing: -1,
+                  fontWeight: FontWeight.bold,
+                  color: mainTextColor),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: sizes.map((size) {
+                bool isSelected = size == viewModel.selectedSize;
+
+                return GestureDetector(
+                  onTap: () {
+                    viewModel.selectedSize = size;
+                    viewModel.rebuildUi();
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 8),
+                    padding:
+                        const EdgeInsets.symmetric(vertical: 6, horizontal: 14),
+                    decoration: BoxDecoration(
+                      color: isSelected ? Colors.black : Colors.white,
+                      border: Border.all(
+                        color: isSelected ? Colors.black : Colors.grey,
+                        width: 2,
+                      ),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Text(
+                      size,
+                      style: GoogleFonts.hankenGrotesk(
+                        color: isSelected ? Colors.white : Colors.black,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ),
+                );
+              }).toList(),
+            ),
+          ],
+        ),
+      )),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Price",
+                  style: GoogleFonts.hankenGrotesk(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      color: lightTextColor),
+                ),
+                Text(
+                  "\$ ${price.toString()}",
+                  style: GoogleFonts.hankenGrotesk(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: mainTextColor),
+                )
+              ],
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.7,
+              height: 50,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                ),
+                onPressed: () {},
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  spacing: 5,
+                  children: [
+                    const Icon(
+                      Icons.shopping_cart_outlined,
+                      color: Colors.white,
+                    ),
+                    Text(
+                      "Add to Cart",
+                      style: GoogleFonts.hankenGrotesk(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w700,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 
