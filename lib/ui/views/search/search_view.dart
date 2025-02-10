@@ -17,24 +17,6 @@ class SearchView extends StackedView<SearchViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          "Search",
-          style: GoogleFonts.hankenGrotesk(
-              wordSpacing: -4,
-              letterSpacing: -1,
-              color: mainTextColor,
-              fontSize: 30,
-              fontWeight: FontWeight.w800),
-        ),
-        actions: [
-          IconButton(
-            onPressed: viewModel.navigationService.navigateToNotificationView,
-            icon: const Icon(Iconsax.notification_copy),
-          )
-        ],
-      ),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
@@ -42,11 +24,29 @@ class SearchView extends StackedView<SearchViewModel> {
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 12,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Search",
+                  style: GoogleFonts.hankenGrotesk(
+                      wordSpacing: -4,
+                      letterSpacing: -1,
+                      color: mainTextColor,
+                      fontSize: 38,
+                      fontWeight: FontWeight.w800),
+                ),
+                IconButton(
+                  onPressed:
+                      viewModel.navigationService.navigateToNotificationView,
+                  icon: const Icon(Iconsax.notification_copy),
+                )
+              ],
+            ),
             TextField(
               cursorColor: mainBackgroundColor,
               autofocus: false,
               onChanged: viewModel.searchProducts,
-              onTap: viewModel.navigationService.navigateToSearchView,
               decoration: InputDecoration(
                 alignLabelWithHint: true,
                 prefixIcon: const Icon(Iconsax.search_normal_copy),
