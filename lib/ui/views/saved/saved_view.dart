@@ -100,7 +100,7 @@ class SavedView extends StackedView<SavedViewModel> {
                           product: product,
                           onToggleSaved: () =>
                               viewModel.toggleSavedStatus(product.id),
-                              isTappable: false,
+                          isTappable: false,
                         );
                       }
                     }),

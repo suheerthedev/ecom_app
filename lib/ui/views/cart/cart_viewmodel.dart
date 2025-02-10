@@ -13,7 +13,6 @@ class CartViewModel extends BaseViewModel {
 
   List<Product> get products => productService.products;
 
-
   void showCheckoutBottomSheet() async {
     var response = await bottomSheetService.showCustomSheet(
       variant: BottomSheetType.filter, // Customize this based on your app setup
@@ -26,5 +25,4 @@ class CartViewModel extends BaseViewModel {
       navigationService.navigateTo('/checkout');
     }
   }
-  
 }

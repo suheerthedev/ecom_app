@@ -13,7 +13,11 @@ class ProductCard1 extends StackedView<ProductCard1Model> {
   final VoidCallback? onTapped;
   final bool isTappable;
   const ProductCard1(
-      {required this.product, required this.onToggleSaved, this.onTapped,required this.isTappable,  super.key});
+      {required this.product,
+      required this.onToggleSaved,
+      this.onTapped,
+      required this.isTappable,
+      super.key});
 
   @override
   Widget builder(
@@ -22,7 +26,7 @@ class ProductCard1 extends StackedView<ProductCard1Model> {
     Widget? child,
   ) {
     return InkWell(
-      onTap: isTappable ? onTapped : (){},
+      onTap: isTappable ? onTapped : () {},
       child: SizedBox(
         width: 150,
         height: 250,
