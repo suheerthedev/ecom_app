@@ -10,8 +10,10 @@ import 'product_card_1_model.dart';
 class ProductCard1 extends StackedView<ProductCard1Model> {
   final Product product;
   final VoidCallback onToggleSaved;
+  final VoidCallback? onTapped;
+  final bool isTappable;
   const ProductCard1(
-      {required this.product, required this.onToggleSaved, super.key});
+      {required this.product, required this.onToggleSaved, this.onTapped,required this.isTappable,  super.key});
 
   @override
   Widget builder(
@@ -19,67 +21,72 @@ class ProductCard1 extends StackedView<ProductCard1Model> {
     ProductCard1Model viewModel,
     Widget? child,
   ) {
-    return SizedBox(
-      width: 150,
-      height: 250,
-      child: Stack(children: [
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          spacing: 5,
-          children: [
-            ClipRRect(
-                borderRadius: BorderRadius.circular(15),
+    return InkWell(
+      onTap: isTappable ? onTapped : (){},
+      child: SizedBox(
+        width: 150,
+        height: 250,
+        child: Stack(children: [
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 5,
+            children: [
+              ClipRRect(
+                  borderRadius: BorderRadius.circular(15),
+                  child: Container(
+                      width: double.infinity,
+                      height: 170,
+                      color: Colors.black)),
+              Text(
+                product.title,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: GoogleFonts.hankenGrotesk(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: mainTextColor),
+              ),
+              Text(
+                "\$ ${product.price}",
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: GoogleFonts.hankenGrotesk(
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: lightTextColor),
+              )
+            ],
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(5),
                 child: Container(
-                    width: double.infinity, height: 170, color: Colors.black)),
-            Text(
-              product.title,
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.hankenGrotesk(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: mainTextColor),
-            ),
-            Text(
-              "\$ ${product.price}",
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-              style: GoogleFonts.hankenGrotesk(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: lightTextColor),
-            )
-          ],
-        ),
-        Align(
-          alignment: Alignment.topRight,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(5),
-              child: Container(
-                padding: EdgeInsets.zero,
-                width: 35,
-                height: 35,
-                color: Colors.white70,
-                child: IconButton(
-                  isSelected: product.isSaved,
-                  selectedIcon: const Icon(
-                    Iconsax.heart,
-                    color: Colors.red,
-                  ),
                   padding: EdgeInsets.zero,
-                  onPressed: onToggleSaved,
-                  icon: const Icon(
-                    Iconsax.heart_copy,
-                    color: mainIconColor,
+                  width: 35,
+                  height: 35,
+                  color: Colors.white70,
+                  child: IconButton(
+                    isSelected: product.isSaved,
+                    selectedIcon: const Icon(
+                      Iconsax.heart,
+                      color: Colors.red,
+                    ),
+                    padding: EdgeInsets.zero,
+                    onPressed: onToggleSaved,
+                    icon: const Icon(
+                      Iconsax.heart_copy,
+                      color: mainIconColor,
+                    ),
                   ),
                 ),
               ),
             ),
           ),
-        ),
-      ]),
+        ]),
+      ),
     );
   }
 
