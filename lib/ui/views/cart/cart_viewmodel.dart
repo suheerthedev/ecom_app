@@ -19,7 +19,11 @@ class CartViewModel extends BaseViewModel {
   }
 
   void decrementCounter() {
-    counter--;
+    if (counter == 0) {
+      counter = 0;
+    } else {
+      counter--;
+    }
     rebuildUi();
   }
 }

@@ -52,10 +52,10 @@ class CartView extends StackedView<CartViewModel> {
               ),
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 5, vertical: 10.0),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10.0),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  spacing: 5,
+                  spacing: 10,
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
@@ -66,78 +66,94 @@ class CartView extends StackedView<CartViewModel> {
                       ),
                     ),
                     Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 5.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Expanded(
-                              child: Row(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        viewModel.products[0].title,
-                                        style: GoogleFonts.hankenGrotesk(
-                                            fontSize: 18,
-                                            fontWeight: FontWeight.w600),
-                                      ),
-                                      Text(
-                                        viewModel.products[0].rating.toString(),
-                                        style: GoogleFonts.hankenGrotesk(
-                                            color: lightTextColor),
-                                      ),
-                                    ],
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      viewModel.products[0].title,
+                                      style: GoogleFonts.hankenGrotesk(
+                                          fontSize: 20,
+                                          letterSpacing: -1,
+                                          color: mainTextColor,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(
+                                      viewModel.products[0].rating.toString(),
+                                      style: GoogleFonts.hankenGrotesk(
+                                          color: lightTextColor),
+                                    ),
+                                  ],
+                                ),
+                                InkWell(
+                                  onTap: () {},
+                                  child: const Padding(
+                                    padding: EdgeInsets.all(8.0),
+                                    child: Icon(
+                                      Iconsax.trash,
+                                      size: 18,
+                                      color: errorColor,
+                                    ),
                                   ),
-                                  IconButton(
-                                      onPressed: () {},
-                                      icon: const Icon(
-                                        Iconsax.trash,
-                                        size: 18,
-                                        color: errorColor,
-                                      ))
-                                ],
-                              ),
+                                )
+                              ],
                             ),
-                            Expanded(
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding: const EdgeInsets.only(right: 8.0),
                               child: Row(
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Text(
                                     "\$ ${viewModel.products[0].price.toString()}",
                                     style: GoogleFonts.hankenGrotesk(
-                                        color: lightTextColor),
+                                        fontSize: 16,
+                                        letterSpacing: 0,
+                                        color: mainTextColor,
+                                        fontWeight: FontWeight.bold),
                                   ),
                                   Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    spacing: 10,
                                     children: [
-                                      IconButton(
-                                          onPressed: viewModel.decrementCounter,
-                                          icon: const Icon(
-                                            Iconsax.minus,
-                                            size: 20,
-                                            color: darkIconColor,
-                                          )),
-                                      Text(viewModel.counter.toString()),
-                                      IconButton(
-                                          onPressed: viewModel.incrementCounter,
-                                          icon: const Icon(
-                                            Iconsax.add,
-                                            size: 20,
-                                            color: darkIconColor,
-                                          )),
+                                      InkWell(
+                                        onTap: viewModel.decrementCounter,
+                                        child: const Icon(
+                                          Iconsax.minus,
+                                          size: 20,
+                                          color: darkIconColor,
+                                        ),
+                                      ),
+                                      Text(
+                                        viewModel.counter.toString(),
+                                        style: GoogleFonts.hankenGrotesk(),
+                                      ),
+                                      InkWell(
+                                        onTap: viewModel.incrementCounter,
+                                        child: const Icon(
+                                          Iconsax.add,
+                                          size: 20,
+                                          color: darkIconColor,
+                                        ),
+                                      ),
                                     ],
                                   )
                                 ],
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
