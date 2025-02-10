@@ -11,19 +11,5 @@ class CartViewModel extends BaseViewModel {
 
   List<Product> get products => productService.products;
 
-  int counter = 0;
-
-  void incrementCounter() {
-    counter++;
-    rebuildUi();
-  }
-
-  void decrementCounter() {
-    if (counter == 0) {
-      counter = 0;
-    } else {
-      counter--;
-    }
-    rebuildUi();
-  }
+  
 }
