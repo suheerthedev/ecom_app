@@ -47,9 +47,6 @@ class AccountView extends StackedView<AccountViewModel> {
                       )
                     ],
                   ),
-                  const Divider(
-                    color: lightGrey,
-                  ),
                 ],
               ),
             ),
