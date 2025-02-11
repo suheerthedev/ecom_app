@@ -1,8 +1,8 @@
 import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
+import 'package:ecom_app/ui/widgets/common/account_listtile/account_listtile.dart';
 import 'package:ecom_app/ui/widgets/common/main_appbar/main_appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 import 'package:stacked/stacked.dart';
 
@@ -34,187 +34,107 @@ class AccountView extends StackedView<AccountViewModel> {
                 thickness: 10,
                 color: lightGrey,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: ListTile(
-                  leading: const Icon(
-                    Iconsax.box_copy,
-                    size: 24,
-                  ),
-                  title: Text(
-                    "My Orders",
-                    style: GoogleFonts.hankenGrotesk(
-                        color: mainTextColor, fontSize: 18),
-                  ),
-                  trailing: const Icon(
-                    Iconsax.arrow_right_3_copy,
-                    size: 22,
-                  ),
+              AccountListtile(
+                title: "My Orders",
+                titleColor: mainTextColor,
+                leadingIcon: const Icon(
+                  Iconsax.box_copy,
+                  size: 20,
                 ),
+                hasDivider: false,
+                hasTrailing: true,
+                onTapped: () {},
               ),
               const Divider(
                 thickness: 10,
                 color: lightGrey,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: const Icon(
-                        Iconsax.user_add_copy,
-                        size: 24,
-                      ),
-                      title: Text(
-                        "My Details",
-                        style: GoogleFonts.hankenGrotesk(
-                            color: mainTextColor, fontSize: 18),
-                      ),
-                      trailing: const Icon(
-                        Iconsax.arrow_right_3_copy,
-                        size: 22,
-                      ),
-                    ),
-                    const Divider(
-                      color: lightGrey,
-                    ),
-                  ],
+              AccountListtile(
+                title: "My Details",
+                titleColor: mainTextColor,
+                leadingIcon: const Icon(
+                  Iconsax.user_add_copy,
+                  size: 20,
                 ),
+                hasDivider: true,
+                hasTrailing: true,
+                onTapped: () {},
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: const Icon(
-                        Iconsax.home_2_copy,
-                        size: 24,
-                      ),
-                      title: Text(
-                        "Address Book",
-                        style: GoogleFonts.hankenGrotesk(
-                            color: mainTextColor, fontSize: 18),
-                      ),
-                      trailing: const Icon(
-                        Iconsax.arrow_right_3_copy,
-                        size: 22,
-                      ),
-                    ),
-                    const Divider(
-                      color: lightGrey,
-                    ),
-                  ],
+              AccountListtile(
+                title: "Address Book",
+                titleColor: mainTextColor,
+                leadingIcon: const Icon(
+                  Iconsax.home_2_copy,
+                  size: 20,
                 ),
+                hasDivider: true,
+                hasTrailing: true,
+                onTapped: () {},
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: const Icon(
-                        Iconsax.card_copy,
-                        size: 24,
-                      ),
-                      title: Text(
-                        "Payment Methods",
-                        style: GoogleFonts.hankenGrotesk(
-                            color: mainTextColor, fontSize: 18),
-                      ),
-                      trailing: const Icon(
-                        Iconsax.arrow_right_3_copy,
-                        size: 22,
-                      ),
-                    ),
-                    const Divider(
-                      color: lightGrey,
-                    ),
-                  ],
+              AccountListtile(
+                title: "Payment Methods",
+                titleColor: mainTextColor,
+                leadingIcon: const Icon(
+                  Iconsax.card_copy,
+                  size: 20,
                 ),
+                hasDivider: true,
+                hasTrailing: true,
+                onTapped: () {},
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: ListTile(
-                  onTap: viewModel.navigationService.navigateToNotificationView,
-                  leading: const Icon(
-                    Iconsax.notification_copy,
-                    size: 24,
-                  ),
-                  title: Text(
-                    "Notifications",
-                    style: GoogleFonts.hankenGrotesk(
-                        color: mainTextColor, fontSize: 18),
-                  ),
-                  trailing: const Icon(
-                    Iconsax.arrow_right_3_copy,
-                    size: 22,
-                  ),
+              AccountListtile(
+                title: "Notifications",
+                titleColor: mainTextColor,
+                leadingIcon: const Icon(
+                  Iconsax.notification_copy,
+                  size: 20,
                 ),
+                hasDivider: false,
+                hasTrailing: true,
+                onTapped:
+                    viewModel.navigationService.navigateToNotificationView,
               ),
               const Divider(
                 thickness: 10,
                 color: lightGrey,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: Column(
-                  children: [
-                    ListTile(
-                      leading: const Icon(
-                        Iconsax.info_circle_copy,
-                        size: 24,
-                      ),
-                      title: Text(
-                        "FAQs",
-                        style: GoogleFonts.hankenGrotesk(
-                            color: mainTextColor, fontSize: 18),
-                      ),
-                      trailing: const Icon(
-                        Iconsax.arrow_right_3_copy,
-                        size: 22,
-                      ),
-                    ),
-                    const Divider(
-                      color: lightGrey,
-                    ),
-                  ],
+              AccountListtile(
+                title: "FAQs",
+                titleColor: mainTextColor,
+                leadingIcon: const Icon(
+                  Iconsax.info_circle_copy,
+                  size: 20,
                 ),
+                hasDivider: true,
+                hasTrailing: true,
+                onTapped: () {},
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: ListTile(
-                  leading: const Icon(
-                    Iconsax.headphone_copy,
-                    size: 24,
-                  ),
-                  title: Text(
-                    "Help Center",
-                    style: GoogleFonts.hankenGrotesk(
-                        color: mainTextColor, fontSize: 18),
-                  ),
-                  trailing: const Icon(
-                    Iconsax.arrow_right_3_copy,
-                    size: 22,
-                  ),
+              AccountListtile(
+                title: "Help Center",
+                titleColor: mainTextColor,
+                leadingIcon: const Icon(
+                  Iconsax.headphone_copy,
+                  size: 20,
                 ),
+                hasDivider: false,
+                hasTrailing: true,
+                onTapped: () {},
               ),
               const Divider(
                 thickness: 10,
                 color: lightGrey,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                child: ListTile(
-                  leading: const Icon(
-                    Iconsax.logout_1_copy,
-                    size: 24,
-                    color: errorColor,
-                  ),
-                  title: Text(
-                    "Logout",
-                    style: GoogleFonts.hankenGrotesk(
-                        color: errorColor, fontSize: 18),
-                  ),
+              AccountListtile(
+                title: "Logout",
+                titleColor: errorColor,
+                leadingIcon: const Icon(
+                  Iconsax.logout_1_copy,
+                  color: errorColor,
+                  size: 20,
                 ),
+                hasDivider: false,
+                hasTrailing: false,
+                onTapped: () {},
               ),
             ],
           ),

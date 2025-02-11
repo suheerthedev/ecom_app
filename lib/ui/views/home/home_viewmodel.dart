@@ -48,7 +48,6 @@ class HomeViewModel extends BaseViewModel {
   }
 
   void navigateToDetailedView(Product product) {
-    navigationService.navigateToProductDetailView(
-       product: product);
+    navigationService.navigateToProductDetailView(product: product);
   }
 }
