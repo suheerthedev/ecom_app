@@ -98,28 +98,35 @@ class SearchView extends StackedView<SearchViewModel> {
                           final product = viewModel.filteredProducts[index];
                           return Column(
                             children: [
-                              ListTile(
-                                contentPadding: const EdgeInsets.all(10),
-                                leading: ClipRRect(
-                                  borderRadius: BorderRadius.circular(10),
-                                  child: Container(
-                                    width: 55,
-                                    height: 55,
-                                    color: mainBackgroundColor,
+                              Container(
+                                margin:
+                                    const EdgeInsets.symmetric(vertical: 10),
+                                child: ListTile(
+                                  contentPadding: EdgeInsets.zero,
+                                  leading: ClipRRect(
+                                    borderRadius: BorderRadius.circular(10),
+                                    child: Container(
+                                      width: 65,
+                                      height: 95,
+                                      color: mainBackgroundColor,
+                                    ),
                                   ),
-                                ),
-                                title: Text(
-                                  product.title,
-                                  style: GoogleFonts.hankenGrotesk(
-                                      fontWeight: FontWeight.w600),
-                                ),
-                                subtitle: Text(
-                                  "\$ ${product.price}",
-                                  style: GoogleFonts.hankenGrotesk(),
-                                ),
-                                trailing: IconButton(
-                                  onPressed: () {},
-                                  icon: const Icon(Iconsax.arrow_right_copy),
+                                  title: Text(
+                                    product.title,
+                                    style: GoogleFonts.hankenGrotesk(
+                                        letterSpacing: -1,
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  subtitle: Text(
+                                    "\$ ${product.price}",
+                                    style: GoogleFonts.hankenGrotesk(
+                                        color: lightTextColor),
+                                  ),
+                                  trailing: IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(Iconsax.arrow_right_copy),
+                                  ),
                                 ),
                               ),
                               const Divider(height: 10)
