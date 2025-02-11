@@ -9,7 +9,6 @@ class CartViewModel extends BaseViewModel {
   final NavigationService navigationService = locator<NavigationService>();
   final BottomSheetService bottomSheetService = locator<BottomSheetService>();
 
-
   final ProductService productService = locator<ProductService>();
 
   List<Product> get products => productService.products;
