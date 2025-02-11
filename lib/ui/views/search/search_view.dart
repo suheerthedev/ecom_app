@@ -17,32 +17,46 @@ class SearchView extends StackedView<SearchViewModel> {
     Widget? child,
   ) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize:
+            Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
+        child: SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Search",
+                      style: GoogleFonts.hankenGrotesk(
+                          wordSpacing: -4,
+                          letterSpacing: -1,
+                          color: mainTextColor,
+                          fontSize: 38,
+                          fontWeight: FontWeight.w800),
+                    ),
+                    IconButton(
+                      onPressed: viewModel
+                          .navigationService.navigateToNotificationView,
+                      icon: const Icon(Iconsax.notification_copy),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 12,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Search",
-                  style: GoogleFonts.hankenGrotesk(
-                      wordSpacing: -4,
-                      letterSpacing: -1,
-                      color: mainTextColor,
-                      fontSize: 38,
-                      fontWeight: FontWeight.w800),
-                ),
-                IconButton(
-                  onPressed:
-                      viewModel.navigationService.navigateToNotificationView,
-                  icon: const Icon(Iconsax.notification_copy),
-                )
-              ],
-            ),
             TextField(
               cursorColor: mainBackgroundColor,
               autofocus: false,

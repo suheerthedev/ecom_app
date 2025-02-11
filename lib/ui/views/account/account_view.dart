@@ -17,39 +17,71 @@ class AccountView extends StackedView<AccountViewModel> {
     Widget? child,
   ) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize:
+            Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
+        child: SafeArea(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "My Account",
+                      style: GoogleFonts.hankenGrotesk(
+                          wordSpacing: -4,
+                          letterSpacing: -1,
+                          color: mainTextColor,
+                          fontSize: 38,
+                          fontWeight: FontWeight.w800),
+                    ),
+                    IconButton(
+                      onPressed: viewModel
+                          .navigationService.navigateToNotificationView,
+                      icon: const Icon(Iconsax.notification_copy),
+                    )
+                  ],
+                ),
+              ),
+              // const Divider(
+              //   color: lightGrey,
+              // )
+            ],
+          ),
+        ),
+      ),
       body: SafeArea(
           child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 22),
+        padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           spacing: 12,
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
-              child: Column(
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "My Account",
-                        style: GoogleFonts.hankenGrotesk(
-                            wordSpacing: -4,
-                            letterSpacing: -1,
-                            color: mainTextColor,
-                            fontSize: 38,
-                            fontWeight: FontWeight.w800),
-                      ),
-                      IconButton(
-                        onPressed: viewModel
-                            .navigationService.navigateToNotificationView,
-                        icon: const Icon(Iconsax.notification_copy),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            //   child: Row(
+            //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: [
+            //       Text(
+            //         "My Account",
+            //         style: GoogleFonts.hankenGrotesk(
+            //             wordSpacing: -4,
+            //             letterSpacing: -1,
+            //             color: mainTextColor,
+            //             fontSize: 38,
+            //             fontWeight: FontWeight.w800),
+            //       ),
+            //       IconButton(
+            //         onPressed: viewModel
+            //             .navigationService.navigateToNotificationView,
+            //         icon: const Icon(Iconsax.notification_copy),
+            //       )
+            //     ],
+            //   ),
+            // ),
             Expanded(
               child: SingleChildScrollView(
                 child: Column(

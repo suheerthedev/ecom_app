@@ -20,15 +20,16 @@ class HomeView extends StackedView<HomeViewModel> {
     return DefaultTabController(
       length: viewModel.tabs.length,
       child: Scaffold(
-        body: SafeArea(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 12,
-                children: [
-                  //Heading and Notification Icon
-                  Row(
+        appBar: PreferredSize(
+          preferredSize:
+              Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
+          child: SafeArea(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
@@ -47,7 +48,18 @@ class HomeView extends StackedView<HomeViewModel> {
                       )
                     ],
                   ),
-
+                ),
+              ],
+            ),
+          ),
+        ),
+        body: SafeArea(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                spacing: 12,
+                children: [
                   //TextField and Sort Button
                   Row(
                     children: [

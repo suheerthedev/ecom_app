@@ -18,96 +18,110 @@ class SavedView extends StackedView<SavedViewModel> {
     Widget? child,
   ) {
     return Scaffold(
+        appBar: PreferredSize(
+          preferredSize:
+              Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
+          child: SafeArea(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Saved",
+                        style: GoogleFonts.hankenGrotesk(
+                            wordSpacing: -4,
+                            letterSpacing: -1,
+                            color: mainTextColor,
+                            fontSize: 38,
+                            fontWeight: FontWeight.w800),
+                      ),
+                      IconButton(
+                        onPressed: viewModel
+                            .navigationService.navigateToNotificationView,
+                        icon: const Icon(Iconsax.notification_copy),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
         body: SafeArea(
             child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 22),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: 12,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: 12,
             children: [
-              Text(
-                "Saved",
-                style: GoogleFonts.hankenGrotesk(
-                    wordSpacing: -4,
-                    letterSpacing: -1,
-                    color: mainTextColor,
-                    fontSize: 38,
-                    fontWeight: FontWeight.w800),
-              ),
-              IconButton(
-                onPressed:
-                    viewModel.navigationService.navigateToNotificationView,
-                icon: const Icon(Iconsax.notification_copy),
+              Expanded(
+                child: viewModel.savedProducts.isEmpty
+                    ? Center(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            spacing: 15,
+                            children: [
+                              const Icon(
+                                Iconsax.heart_copy,
+                                size: 48,
+                                color: iconColor,
+                              ),
+                              Text(
+                                "No Saved Items!",
+                                textAlign: TextAlign.center,
+                                style: GoogleFonts.hankenGrotesk(
+                                    fontSize: 22,
+                                    color: mainTextColor,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.symmetric(
+                                    horizontal: 26.0),
+                                child: Text(
+                                  "You don't have any saved items. Go to home and add some",
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.hankenGrotesk(
+                                      fontSize: 16, color: lightTextColor),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      )
+                    : GridView.builder(
+                        gridDelegate:
+                            const SliverGridDelegateWithMaxCrossAxisExtent(
+                          maxCrossAxisExtent: 300,
+                          mainAxisExtent: 230,
+                          crossAxisSpacing: 15,
+                          mainAxisSpacing: 15,
+                        ),
+                        itemCount: viewModel.savedProducts.length,
+                        itemBuilder: (context, index) {
+                          if (viewModel.savedProducts.isEmpty) {
+                            return const Center(
+                              child: Text("List is empty"),
+                            );
+                          } else {
+                            final product = viewModel.savedProducts[index];
+                            return ProductCard1(
+                              product: product,
+                              onToggleSaved: () =>
+                                  viewModel.toggleSavedStatus(product.id),
+                              isTappable: false,
+                            );
+                          }
+                        }),
               )
             ],
           ),
-          Expanded(
-            child: viewModel.savedProducts.isEmpty
-                ? Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        spacing: 15,
-                        children: [
-                          const Icon(
-                            Iconsax.heart_copy,
-                            size: 48,
-                            color: iconColor,
-                          ),
-                          Text(
-                            "No Saved Items!",
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.hankenGrotesk(
-                                fontSize: 22,
-                                color: mainTextColor,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Padding(
-                            padding:
-                                const EdgeInsets.symmetric(horizontal: 26.0),
-                            child: Text(
-                              "You don't have any saved items. Go to home and add some",
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.hankenGrotesk(
-                                  fontSize: 16, color: lightTextColor),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
-                : GridView.builder(
-                    gridDelegate:
-                        const SliverGridDelegateWithMaxCrossAxisExtent(
-                      maxCrossAxisExtent: 300,
-                      mainAxisExtent: 230,
-                      crossAxisSpacing: 15,
-                      mainAxisSpacing: 15,
-                    ),
-                    itemCount: viewModel.savedProducts.length,
-                    itemBuilder: (context, index) {
-                      if (viewModel.savedProducts.isEmpty) {
-                        return const Center(
-                          child: Text("List is empty"),
-                        );
-                      } else {
-                        final product = viewModel.savedProducts[index];
-                        return ProductCard1(
-                          product: product,
-                          onToggleSaved: () =>
-                              viewModel.toggleSavedStatus(product.id),
-                          isTappable: false,
-                        );
-                      }
-                    }),
-          )
-        ],
-      ),
-    )));
+        )));
   }
 
   @override
