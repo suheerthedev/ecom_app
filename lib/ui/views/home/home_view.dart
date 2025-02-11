@@ -20,10 +20,7 @@ class HomeView extends StackedView<HomeViewModel> {
     return DefaultTabController(
       length: viewModel.tabs.length,
       child: Scaffold(
-        appBar: PreferredSize(
-            preferredSize:
-                Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
-            child: const MainAppbar(title: "Discover")),
+        appBar: const MainAppbar(title: "Discover"),
         body: SafeArea(
           child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

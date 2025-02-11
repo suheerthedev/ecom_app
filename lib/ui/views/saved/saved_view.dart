@@ -18,10 +18,7 @@ class SavedView extends StackedView<SavedViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-        appBar: PreferredSize(
-            preferredSize:
-                Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
-            child: const MainAppbar(title: "Saved")),
+        appBar: const MainAppbar(title: "Saved"),
         body: SafeArea(
             child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),

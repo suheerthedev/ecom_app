@@ -18,10 +18,7 @@ class AccountView extends StackedView<AccountViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      appBar: PreferredSize(
-          preferredSize:
-              Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
-          child: const MainAppbar(title: "My Account")),
+      appBar: const MainAppbar(title: "My Account"),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 8),

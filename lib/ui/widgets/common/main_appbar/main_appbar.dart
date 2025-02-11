@@ -7,8 +7,10 @@ import 'package:stacked/stacked.dart';
 
 import 'main_appbar_model.dart';
 
-class MainAppbar extends StackedView<MainAppbarModel> {
+class MainAppbar extends StackedView<MainAppbarModel>
+    implements PreferredSizeWidget {
   final String title;
+
   const MainAppbar({required this.title, super.key});
 
   @override
@@ -17,40 +19,32 @@ class MainAppbar extends StackedView<MainAppbarModel> {
     MainAppbarModel viewModel,
     Widget? child,
   ) {
-    return SafeArea(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  title,
-                  style: GoogleFonts.hankenGrotesk(
-                      wordSpacing: -4,
-                      letterSpacing: -1,
-                      color: mainTextColor,
-                      fontSize: 38,
-                      fontWeight: FontWeight.w800),
-                ),
-                IconButton(
-                  onPressed:
-                      viewModel.navigationService.navigateToNotificationView,
-                  icon: const Icon(Iconsax.notification_copy),
-                )
-              ],
-            ),
-          ),
-        ],
+    return AppBar(
+      surfaceTintColor: secondaryBackgroundColor,
+      title: Text(
+        title,
+        style: GoogleFonts.hankenGrotesk(
+            wordSpacing: -4,
+            letterSpacing: -1,
+            color: mainTextColor,
+            fontSize: 38,
+            fontWeight: FontWeight.w800),
       ),
+      actions: [
+        IconButton(
+          onPressed: viewModel.navigationService.navigateToNotificationView,
+          icon: const Icon(Iconsax.notification_copy),
+        ),
+      ],
+      backgroundColor: Colors.white,
+      elevation: 0,
     );
   }
 
   @override
-  MainAppbarModel viewModelBuilder(
-    BuildContext context,
-  ) =>
-      MainAppbarModel();
+  MainAppbarModel viewModelBuilder(BuildContext context) => MainAppbarModel();
+
+  @override
+  Size get preferredSize =>
+      const Size.fromHeight(kToolbarHeight); // Required for PreferredSizeWidget
 }

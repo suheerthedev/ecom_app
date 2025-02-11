@@ -18,10 +18,7 @@ class CartView extends StackedView<CartViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      appBar: PreferredSize(
-          preferredSize:
-              Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
-          child: const MainAppbar(title: "My Cart")),
+      appBar: const MainAppbar(title: "My Cart"),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
