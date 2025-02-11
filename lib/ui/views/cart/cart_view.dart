@@ -48,6 +48,7 @@ class CartView extends StackedView<CartViewModel> {
                                 textAlign: TextAlign.center,
                                 style: GoogleFonts.hankenGrotesk(
                                     fontSize: 22,
+                                    letterSpacing: -1,
                                     color: mainTextColor,
                                     fontWeight: FontWeight.bold),
                               ),
