@@ -20,7 +20,7 @@ class ProductCard2 extends StackedView<ProductCard2Model> {
     return Container(
       width: double.infinity,
       height: 120,
-      margin: EdgeInsets.symmetric(vertical: 10),
+      margin: const EdgeInsets.symmetric(vertical: 10),
       decoration: BoxDecoration(
         border: Border.all(color: lightBackgroundColor),
         borderRadius: BorderRadius.circular(10),

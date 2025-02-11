@@ -114,7 +114,7 @@ class SearchView extends StackedView<SearchViewModel> {
                           return Column(
                             children: [
                               ListTile(
-                                contentPadding: EdgeInsets.all(10),
+                                contentPadding: const EdgeInsets.all(10),
                                 leading: ClipRRect(
                                   borderRadius: BorderRadius.circular(10),
                                   child: Container(
@@ -134,7 +134,7 @@ class SearchView extends StackedView<SearchViewModel> {
                                 ),
                                 trailing: IconButton(
                                   onPressed: () {},
-                                  icon: Icon(Iconsax.arrow_right_copy),
+                                  icon: const Icon(Iconsax.arrow_right_copy),
                                 ),
                               ),
                               const Divider(height: 10)
