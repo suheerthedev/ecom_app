@@ -47,13 +47,8 @@ class HomeViewModel extends BaseViewModel {
     rebuildUi();
   }
 
-  void navigateToDetailedView(String title, double ratings, String description,
-      List sizes, double price) {
+  void navigateToDetailedView(Product product) {
     navigationService.navigateToProductDetailView(
-        title: title,
-        ratings: ratings,
-        description: description,
-        sizes: sizes,
-        price: price);
+       product: product);
   }
 }

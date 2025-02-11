@@ -1,4 +1,5 @@
 import 'package:ecom_app/app/app.router.dart';
+import 'package:ecom_app/models/product_model.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -8,20 +9,9 @@ import 'package:stacked/stacked.dart';
 import 'product_detail_viewmodel.dart';
 
 class ProductDetailView extends StackedView<ProductDetailViewModel> {
-  final String title;
-  final double ratings;
-  final String description;
-  final List sizes;
-  final double price;
+  final Product product;
 
-  const ProductDetailView(
-      {required this.title,
-      required this.ratings,
-      required this.description,
-      required this.sizes,
-      required this.price,
-      Key? key})
-      : super(key: key);
+  const ProductDetailView({required this.product, Key? key}) : super(key: key);
 
   @override
   Widget builder(
@@ -63,7 +53,7 @@ class ProductDetailView extends StackedView<ProductDetailViewModel> {
                   color: mainBackgroundColor),
             ),
             Text(
-              title,
+              product.title,
               style: GoogleFonts.hankenGrotesk(
                   fontSize: 28,
                   letterSpacing: -1,
@@ -78,7 +68,7 @@ class ProductDetailView extends StackedView<ProductDetailViewModel> {
                   color: Colors.amber[600],
                 ),
                 Text(
-                  "${ratings.toString()}/5.0",
+                  "${product.rating.toString()}/5.0",
                   style: GoogleFonts.hankenGrotesk(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
@@ -95,7 +85,7 @@ class ProductDetailView extends StackedView<ProductDetailViewModel> {
               ],
             ),
             Text(
-              description,
+              product.description,
               style: GoogleFonts.hankenGrotesk(
                   fontSize: 16,
                   fontWeight: FontWeight.normal,
@@ -111,7 +101,7 @@ class ProductDetailView extends StackedView<ProductDetailViewModel> {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: sizes.map((size) {
+              children: product.sizes.map((size) {
                 bool isSelected = size == viewModel.selectedSize;
 
                 return GestureDetector(
@@ -160,7 +150,7 @@ class ProductDetailView extends StackedView<ProductDetailViewModel> {
                       color: lightTextColor),
                 ),
                 Text(
-                  "\$ ${price.toString()}",
+                  "\$ ${product.price.toString()}",
                   style: GoogleFonts.hankenGrotesk(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,

@@ -5,6 +5,7 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
+import 'package:ecom_app/models/product_model.dart' as _i18;
 import 'package:ecom_app/ui/views/account/account_view.dart' as _i16;
 import 'package:ecom_app/ui/views/cart/cart_view.dart' as _i14;
 import 'package:ecom_app/ui/views/forgot_password/forgot_password_view.dart'
@@ -26,7 +27,7 @@ import 'package:ecom_app/ui/views/verification/verification_view.dart' as _i8;
 import 'package:flutter/material.dart' as _i17;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i18;
+import 'package:stacked_services/stacked_services.dart' as _i19;
 
 class Routes {
   static const homeView = '/home-view';
@@ -226,13 +227,8 @@ class StackedRouter extends _i1.RouterBase {
     _i15.ProductDetailView: (data) {
       final args = data.getArgs<ProductDetailViewArguments>(nullOk: false);
       return _i17.MaterialPageRoute<dynamic>(
-        builder: (context) => _i15.ProductDetailView(
-            title: args.title,
-            ratings: args.ratings,
-            description: args.description,
-            sizes: args.sizes,
-            price: args.price,
-            key: args.key),
+        builder: (context) =>
+            _i15.ProductDetailView(product: args.product, key: args.key),
         settings: data,
       );
     },
@@ -253,54 +249,32 @@ class StackedRouter extends _i1.RouterBase {
 
 class ProductDetailViewArguments {
   const ProductDetailViewArguments({
-    required this.title,
-    required this.ratings,
-    required this.description,
-    required this.sizes,
-    required this.price,
+    required this.product,
     this.key,
   });
 
-  final String title;
-
-  final double ratings;
-
-  final String description;
-
-  final List<dynamic> sizes;
-
-  final double price;
+  final _i18.Product product;
 
   final _i17.Key? key;
 
   @override
   String toString() {
-    return '{"title": "$title", "ratings": "$ratings", "description": "$description", "sizes": "$sizes", "price": "$price", "key": "$key"}';
+    return '{"product": "$product", "key": "$key"}';
   }
 
   @override
   bool operator ==(covariant ProductDetailViewArguments other) {
     if (identical(this, other)) return true;
-    return other.title == title &&
-        other.ratings == ratings &&
-        other.description == description &&
-        other.sizes == sizes &&
-        other.price == price &&
-        other.key == key;
+    return other.product == product && other.key == key;
   }
 
   @override
   int get hashCode {
-    return title.hashCode ^
-        ratings.hashCode ^
-        description.hashCode ^
-        sizes.hashCode ^
-        price.hashCode ^
-        key.hashCode;
+    return product.hashCode ^ key.hashCode;
   }
 }
 
-extension NavigatorStateExtension on _i18.NavigationService {
+extension NavigatorStateExtension on _i19.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -484,11 +458,7 @@ extension NavigatorStateExtension on _i18.NavigationService {
   }
 
   Future<dynamic> navigateToProductDetailView({
-    required String title,
-    required double ratings,
-    required String description,
-    required List<dynamic> sizes,
-    required double price,
+    required _i18.Product product,
     _i17.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -497,13 +467,7 @@ extension NavigatorStateExtension on _i18.NavigationService {
         transition,
   }) async {
     return navigateTo<dynamic>(Routes.productDetailView,
-        arguments: ProductDetailViewArguments(
-            title: title,
-            ratings: ratings,
-            description: description,
-            sizes: sizes,
-            price: price,
-            key: key),
+        arguments: ProductDetailViewArguments(product: product, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -707,11 +671,7 @@ extension NavigatorStateExtension on _i18.NavigationService {
   }
 
   Future<dynamic> replaceWithProductDetailView({
-    required String title,
-    required double ratings,
-    required String description,
-    required List<dynamic> sizes,
-    required double price,
+    required _i18.Product product,
     _i17.Key? key,
     int? routerId,
     bool preventDuplicates = true,
@@ -720,13 +680,7 @@ extension NavigatorStateExtension on _i18.NavigationService {
         transition,
   }) async {
     return replaceWith<dynamic>(Routes.productDetailView,
-        arguments: ProductDetailViewArguments(
-            title: title,
-            ratings: ratings,
-            description: description,
-            sizes: sizes,
-            price: price,
-            key: key),
+        arguments: ProductDetailViewArguments(product: product, key: key),
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

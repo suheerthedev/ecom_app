@@ -1,5 +1,7 @@
+import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:ecom_app/ui/widgets/common/main_appbar/main_appbar.dart';
+import 'package:ecom_app/ui/widgets/common/product_card_3/product_card_3.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
@@ -96,41 +98,13 @@ class SearchView extends StackedView<SearchViewModel> {
                         itemCount: viewModel.filteredProducts.length,
                         itemBuilder: (context, index) {
                           final product = viewModel.filteredProducts[index];
-                          return Column(
-                            children: [
-                              Container(
-                                margin:
-                                    const EdgeInsets.symmetric(vertical: 10),
-                                child: ListTile(
-                                  contentPadding: EdgeInsets.zero,
-                                  leading: ClipRRect(
-                                    borderRadius: BorderRadius.circular(10),
-                                    child: Container(
-                                      width: 65,
-                                      height: 95,
-                                      color: mainBackgroundColor,
-                                    ),
-                                  ),
-                                  title: Text(
-                                    product.title,
-                                    style: GoogleFonts.hankenGrotesk(
-                                        letterSpacing: -1,
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold),
-                                  ),
-                                  subtitle: Text(
-                                    "\$ ${product.price}",
-                                    style: GoogleFonts.hankenGrotesk(
-                                        color: lightTextColor),
-                                  ),
-                                  trailing: IconButton(
-                                    onPressed: () {},
-                                    icon: const Icon(Iconsax.arrow_right_copy),
-                                  ),
-                                ),
-                              ),
-                              const Divider(height: 10)
-                            ],
+                          return ProductCard3(
+                            product: product,
+                            onTapped: () {
+                              viewModel.navigationService
+                                  .navigateToProductDetailView(
+                                      product: product);
+                            },
                           );
                         })),
           ],
