@@ -27,3 +27,4 @@ const Color mainBtnColor = Color(0xFF1A1A1A);
 
 //Random
 const Color errorColor = Colors.red;
+const Color lightGrey = Color(0XFFE6E6E6);

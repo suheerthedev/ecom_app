@@ -20,6 +20,7 @@ import 'package:ecom_app/ui/views/main/main_view.dart';
 import 'package:ecom_app/ui/views/saved/saved_view.dart';
 import 'package:ecom_app/ui/views/cart/cart_view.dart';
 import 'package:ecom_app/ui/views/product_detail/product_detail_view.dart';
+import 'package:ecom_app/ui/views/account/account_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -39,6 +40,7 @@ import 'package:ecom_app/ui/views/product_detail/product_detail_view.dart';
     MaterialRoute(page: SavedView),
     MaterialRoute(page: CartView),
     MaterialRoute(page: ProductDetailView),
+    MaterialRoute(page: AccountView),
 // @stacked-route
   ],
   dependencies: [
