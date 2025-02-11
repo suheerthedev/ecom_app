@@ -17,37 +17,33 @@ class MainAppbar extends StackedView<MainAppbarModel> {
     MainAppbarModel viewModel,
     Widget? child,
   ) {
-    return PreferredSize(
-      preferredSize:
-          Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
-      child: SafeArea(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    title,
-                    style: GoogleFonts.hankenGrotesk(
-                        wordSpacing: -4,
-                        letterSpacing: -1,
-                        color: mainTextColor,
-                        fontSize: 38,
-                        fontWeight: FontWeight.w800),
-                  ),
-                  IconButton(
-                    onPressed:
-                        viewModel.navigationService.navigateToNotificationView,
-                    icon: const Icon(Iconsax.notification_copy),
-                  )
-                ],
-              ),
+    return SafeArea(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  title,
+                  style: GoogleFonts.hankenGrotesk(
+                      wordSpacing: -4,
+                      letterSpacing: -1,
+                      color: mainTextColor,
+                      fontSize: 38,
+                      fontWeight: FontWeight.w800),
+                ),
+                IconButton(
+                  onPressed:
+                      viewModel.navigationService.navigateToNotificationView,
+                  icon: const Icon(Iconsax.notification_copy),
+                )
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -1,5 +1,5 @@
-import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
+import 'package:ecom_app/ui/widgets/common/main_appbar/main_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
@@ -18,38 +18,9 @@ class SearchView extends StackedView<SearchViewModel> {
   ) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize:
-            Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
-        child: SafeArea(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "Search",
-                      style: GoogleFonts.hankenGrotesk(
-                          wordSpacing: -4,
-                          letterSpacing: -1,
-                          color: mainTextColor,
-                          fontSize: 38,
-                          fontWeight: FontWeight.w800),
-                    ),
-                    IconButton(
-                      onPressed: viewModel
-                          .navigationService.navigateToNotificationView,
-                      icon: const Icon(Iconsax.notification_copy),
-                    )
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+          preferredSize:
+              Size(double.infinity, MediaQuery.of(context).size.height * 0.2),
+          child: const MainAppbar(title: "Search")),
       body: SafeArea(
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
