@@ -27,9 +27,7 @@ class ProductCard1 extends StackedView<ProductCard1Model> {
   ) {
     return InkWell(
       onTap: isTappable ? onTapped : () {},
-      child: SizedBox(
-        width: 150,
-        height: 250,
+      child: Expanded(
         child: Stack(children: [
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,11 +40,13 @@ class ProductCard1 extends StackedView<ProductCard1Model> {
                       height: 170,
                       color: Colors.black)),
               Text(
+                softWrap: true,
                 product.title,
-                maxLines: 1,
+                maxLines: 2,
                 overflow: TextOverflow.ellipsis,
                 style: GoogleFonts.hankenGrotesk(
-                    fontSize: 18,
+                    fontSize: 20,
+                    letterSpacing: -1,
                     fontWeight: FontWeight.bold,
                     color: mainTextColor),
               ),

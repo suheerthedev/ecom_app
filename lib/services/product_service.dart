@@ -69,6 +69,28 @@ class ProductService with ListenableServiceMixin {
       rating: 4.9,
       isSaved: false,
     ),
+    Product(
+      id: '6',
+      title: 'Regular Fit Pants',
+      description:
+          "The name says it all, the right size slightly snugs the body leaving enough room for comfort in the sleeves and waist.",
+      sizes: ['S', 'M', 'L'],
+      imagePath: '',
+      price: 100.97,
+      rating: 4.9,
+      isSaved: false,
+    ),
+    Product(
+      id: '7',
+      title: 'Regular Fit Cargo',
+      description:
+          "The name says it all, the right size slightly snugs the body leaving enough room for comfort in the sleeves and waist.",
+      sizes: ['S', 'M', 'L'],
+      imagePath: '',
+      price: 78.99,
+      rating: 4.9,
+      isSaved: false,
+    ),
   ];
 
   List<Product> get products => _products;

@@ -110,11 +110,11 @@ class HomeView extends StackedView<HomeViewModel> {
                         viewModel.tabs.length,
                         (index) => GridView.builder(
                             gridDelegate:
-                                const SliverGridDelegateWithMaxCrossAxisExtent(
-                              maxCrossAxisExtent: 300,
-                              mainAxisExtent: 230,
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisExtent: 250,
                               crossAxisSpacing: 15,
-                              mainAxisSpacing: 15,
+                              mainAxisSpacing: 5,
                             ),
                             itemCount: viewModel.products.length,
                             itemBuilder: (context, index) {
