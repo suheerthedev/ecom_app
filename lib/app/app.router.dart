@@ -5,9 +5,10 @@
 // **************************************************************************
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:ecom_app/models/product_model.dart' as _i18;
+import 'package:ecom_app/models/product_model.dart' as _i19;
 import 'package:ecom_app/ui/views/account/account_view.dart' as _i16;
 import 'package:ecom_app/ui/views/cart/cart_view.dart' as _i14;
+import 'package:ecom_app/ui/views/checkout/checkout_view.dart' as _i17;
 import 'package:ecom_app/ui/views/forgot_password/forgot_password_view.dart'
     as _i7;
 import 'package:ecom_app/ui/views/home/home_view.dart' as _i2;
@@ -24,10 +25,10 @@ import 'package:ecom_app/ui/views/search/search_view.dart' as _i11;
 import 'package:ecom_app/ui/views/sign_up/sign_up_view.dart' as _i5;
 import 'package:ecom_app/ui/views/startup/startup_view.dart' as _i3;
 import 'package:ecom_app/ui/views/verification/verification_view.dart' as _i8;
-import 'package:flutter/material.dart' as _i17;
+import 'package:flutter/material.dart' as _i18;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i19;
+import 'package:stacked_services/stacked_services.dart' as _i20;
 
 class Routes {
   static const homeView = '/home-view';
@@ -60,6 +61,8 @@ class Routes {
 
   static const accountView = '/account-view';
 
+  static const checkoutView = '/checkout-view';
+
   static const all = <String>{
     homeView,
     startupView,
@@ -76,6 +79,7 @@ class Routes {
     cartView,
     productDetailView,
     accountView,
+    checkoutView,
   };
 }
 
@@ -141,65 +145,69 @@ class StackedRouter extends _i1.RouterBase {
       Routes.accountView,
       page: _i16.AccountView,
     ),
+    _i1.RouteDef(
+      Routes.checkoutView,
+      page: _i17.CheckoutView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.HomeView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.HomeView(),
         settings: data,
       );
     },
     _i3.StartupView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.StartupView(),
         settings: data,
       );
     },
     _i4.OnboardingView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.OnboardingView(),
         settings: data,
       );
     },
     _i5.SignUpView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i5.SignUpView(),
         settings: data,
       );
     },
     _i6.LoginView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i6.LoginView(),
         settings: data,
       );
     },
     _i7.ForgotPasswordView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i7.ForgotPasswordView(),
         settings: data,
       );
     },
     _i8.VerificationView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i8.VerificationView(),
         settings: data,
       );
     },
     _i9.ResetPasswordView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i9.ResetPasswordView(),
         settings: data,
       );
     },
     _i10.NotificationView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i10.NotificationView(),
         settings: data,
       );
     },
     _i11.SearchView: (data) {
-      return _i17.PageRouteBuilder<dynamic>(
+      return _i18.PageRouteBuilder<dynamic>(
         pageBuilder: (context, animation, secondaryAnimation) =>
             const _i11.SearchView(),
         settings: data,
@@ -207,34 +215,40 @@ class StackedRouter extends _i1.RouterBase {
       );
     },
     _i12.MainView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i12.MainView(),
         settings: data,
       );
     },
     _i13.SavedView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i13.SavedView(),
         settings: data,
       );
     },
     _i14.CartView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i14.CartView(),
         settings: data,
       );
     },
     _i15.ProductDetailView: (data) {
       final args = data.getArgs<ProductDetailViewArguments>(nullOk: false);
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) =>
             _i15.ProductDetailView(product: args.product, key: args.key),
         settings: data,
       );
     },
     _i16.AccountView: (data) {
-      return _i17.MaterialPageRoute<dynamic>(
+      return _i18.MaterialPageRoute<dynamic>(
         builder: (context) => const _i16.AccountView(),
+        settings: data,
+      );
+    },
+    _i17.CheckoutView: (data) {
+      return _i18.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i17.CheckoutView(),
         settings: data,
       );
     },
@@ -253,9 +267,9 @@ class ProductDetailViewArguments {
     this.key,
   });
 
-  final _i18.Product product;
+  final _i19.Product product;
 
-  final _i17.Key? key;
+  final _i18.Key? key;
 
   @override
   String toString() {
@@ -274,7 +288,7 @@ class ProductDetailViewArguments {
   }
 }
 
-extension NavigatorStateExtension on _i19.NavigationService {
+extension NavigatorStateExtension on _i20.NavigationService {
   Future<dynamic> navigateToHomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -458,8 +472,8 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> navigateToProductDetailView({
-    required _i18.Product product,
-    _i17.Key? key,
+    required _i19.Product product,
+    _i18.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -482,6 +496,20 @@ extension NavigatorStateExtension on _i19.NavigationService {
         transition,
   ]) async {
     return navigateTo<dynamic>(Routes.accountView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> navigateToCheckoutView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.checkoutView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
@@ -671,8 +699,8 @@ extension NavigatorStateExtension on _i19.NavigationService {
   }
 
   Future<dynamic> replaceWithProductDetailView({
-    required _i18.Product product,
-    _i17.Key? key,
+    required _i19.Product product,
+    _i18.Key? key,
     int? routerId,
     bool preventDuplicates = true,
     Map<String, String>? parameters,
@@ -695,6 +723,20 @@ extension NavigatorStateExtension on _i19.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.accountView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithCheckoutView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.checkoutView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,
