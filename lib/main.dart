@@ -21,7 +21,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: Routes.mainView,
+      initialRoute: Routes.startupView,
       theme: ThemeData(
         scaffoldBackgroundColor: secondaryBackgroundColor,
         appBarTheme: const AppBarTheme(
