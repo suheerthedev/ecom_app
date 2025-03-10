@@ -6,6 +6,6 @@ class LoginViewModel extends BaseViewModel {
   final NavigationService navigationService = NavigationService();
 
   void loginSuccess() {
-    navigationService.clearStackAndShow(Routes.homeView);
+    navigationService.clearStackAndShow(Routes.mainView);
   }
 }

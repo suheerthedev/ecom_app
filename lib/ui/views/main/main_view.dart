@@ -23,9 +23,11 @@ class MainView extends StackedView<MainViewModel> {
       body: IndexedStack(
         index: viewModel.selectedIndex,
         children: [
-          Navigator(
-            onGenerateRoute: (settings) =>
-                MaterialPageRoute(builder: (context) => const HomeView()),
+          Material(
+            child: Navigator(
+              onGenerateRoute: (settings) =>
+                  MaterialPageRoute(builder: (context) => const HomeView()),
+            ),
           ),
           Navigator(
             onGenerateRoute: (settings) =>
