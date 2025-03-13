@@ -1,3 +1,4 @@
+import 'package:ecom_app/app/app.router.dart';
 import 'package:ecom_app/ui/common/app_colors.dart';
 import 'package:ecom_app/ui/widgets/common/main_appbar/main_appbar.dart';
 import 'package:ecom_app/ui/widgets/common/product_card_2/product_card_2.dart';
@@ -168,7 +169,7 @@ class CartView extends StackedView<CartViewModel> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: viewModel.navigationService.navigateToCheckoutView,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
