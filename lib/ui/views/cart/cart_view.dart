@@ -169,7 +169,8 @@ class CartView extends StackedView<CartViewModel> {
                               borderRadius: BorderRadius.circular(10),
                             ),
                           ),
-                          onPressed: viewModel.navigationService.navigateToCheckoutView,
+                          onPressed: viewModel
+                              .navigationService.navigateToCheckoutView,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
