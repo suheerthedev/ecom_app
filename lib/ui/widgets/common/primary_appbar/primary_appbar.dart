@@ -20,6 +20,7 @@ class PrimaryAppbar extends StackedView<PrimaryAppbarModel>
   ) {
     return AppBar(
       surfaceTintColor: secondaryBackgroundColor,
+      centerTitle: true,
       title: Text(
         title,
         style: GoogleFonts.hankenGrotesk(
@@ -48,5 +49,5 @@ class PrimaryAppbar extends StackedView<PrimaryAppbarModel>
 
   @override
   // TODO: implement preferredSize
-  Size get preferredSize => throw UnimplementedError();
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }
