@@ -17,6 +17,8 @@ Future<void> main() async {
 class MainApp extends StatelessWidget {
   const MainApp({super.key});
 
+  //added comment for just random purose
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
